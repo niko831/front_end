@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+.App {
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+}
+
+.fixed-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 55px;
+  background-color: #235B2D;
+  color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+
+.fixed-nav p {
+  margin: 0;
+  margin-left: 2%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.fixed-nav a {
+  margin: 0 3%;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: end;
+}
+
+h2 {
+  margin-top: 5%;
+}
