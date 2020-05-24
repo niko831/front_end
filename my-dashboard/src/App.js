@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard';
 import Plant from './components/Plant';
 import Login from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
+import UserCard from './components/UserCard';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       {/* <Route exact path='/' component={Login} /> */}
       <PrivateRoute path='/dashboard' component={Dashboard} />
+      <PrivateRoute path='/usercard' component={UserCard} />
     </div>
     </Router>
   );

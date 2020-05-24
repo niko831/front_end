@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
+body {
+  background: url('./assets/dashBackground.png');
+}
+
 .App {
   text-align: center;
   font-family: 'Nunito', sans-serif;
@@ -8,7 +12,7 @@
 
 .fixed-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   align-content: center;
   position: fixed;
@@ -22,25 +26,80 @@
   box-sizing: border-box;
 }
 
+.left-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: white;
+  width: 100%;
+}
 
-.fixed-nav p {
+
+.left-nav p {
   margin: 0;
   margin-left: 2%;
   font-style: normal;
   font-weight: bold;
   font-size: 1.5rem;
+  
 }
 
-.fixed-nav a {
+.left-nav a {
   margin: 0 3%;
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
   display: flex;
   align-items: end;
+  
 }
+
+.userIcon {
+  margin-right: 2%;
+  margin-top: 0.5%;
+}
+
 
 h2 {
   margin-top: 5%;
+}
+
+.dashboardComponents {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.plantList {
+  width: 30%;
+  padding: 5%;
+  background: #C4C4C4; 
+}
+
+.newPlant {
+  background: #F2F3F2;
+  padding: 3%;
+}
+
+.userCard {
+  background: #F2F3F2;
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+
+.userCard img {
+  width: 30%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.userCard form button {
+  display: inline-block;
 }
