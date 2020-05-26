@@ -15,7 +15,7 @@ const NewPlant = () => {
     const addNewPlant = e => {
         e.preventDefault();
 
-        axiosWithAuth().post('/api/plants', {
+        axiosWithAuth().post('/api/plants/', {
             nickname: plant.nickname,
             species:  plant.species,
             h2o_frequency: plant.h2o_frequency,
@@ -49,11 +49,11 @@ const NewPlant = () => {
                 </label>
                 <label>
                 <p>Species (optional)</p>
-                <input type='text'/>
+                <input type='text' name='species' value={plant.species} onChange={plantChangeHandler}/>
                 </label>
                 <label>
                 <p>Water Frequency</p>
-                <input type='text'/>
+                <input type='text' name='h2o_frequency' value={plant.h2o_frequency} onChange={plantChangeHandler}/>
                 </label>
                 <button type='submit'>Add Plant</button>
             </form>
