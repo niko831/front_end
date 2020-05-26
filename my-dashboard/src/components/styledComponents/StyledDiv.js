@@ -15,12 +15,23 @@ const StyledDiv = styled.div`
 
     .header-nav{
         display:flex;
+        align-items: baseline;
+        
+
+        .info {
+            position: absolute;
+            left: 88.33%;
+            right: 5.06%;
+            top: 2.33%;
+            bottom: 5.36%;
+        }
+
 
         a{
             text-decoration:none;
+            flex-direction: row;
             color: white;
-            margin-left: 25px;
-            margin-top: 20px;
+            margin-left: 20px;
          }
 
         
