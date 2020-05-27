@@ -1,3 +1,4 @@
+//-------------------------------------------------------------------------------------------Home Page Navigation----------------------------------------------------------------------------
 header {
     .img-container {
 
@@ -132,3 +133,81 @@ header {
 }
 
 // ends header
+
+
+//-----------------------------------------------------------------------About Page Navigation--------------------------------------------------------------------------------------------
+header {
+    .nav-title-about{
+        display: flex;
+        justify-content: space-between;
+        //border: 1px solid red;
+        background-color: fade(@everglade,80%);
+        text-align: center;
+        //position: absolute;
+        //top: 1px;
+        width: 100%;
+
+        @media @mobile{
+            align-content: center;
+            height: auto;
+        }
+
+        h1{
+            padding: 5px 0;
+            color: @nav-color;
+            margin-left: 3rem;
+
+            @media @mobile{
+                font-size: 3rem ;
+                margin: 0 1rem;
+            }
+        }//ends h1
+
+        .navigation{
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            margin-top: 1%;
+
+            @media @mobile{
+                margin: 2% 0 0 7%;
+            }
+
+            a{
+                text-decoration: none; 
+                margin: 0 3rem;
+                font-size: 2rem;
+                color: @nav-color;
+                
+                &:hover {
+                    color: lighten(@everglade, 20%);
+                }
+
+                @media @mobile{
+                margin: 0 1rem 0 1rem;
+                text-align: center;
+                }
+            }
+        }//end navigation
+
+        .login{
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            margin-top: 1%;
+
+            a{
+                text-decoration: none;
+                margin: 0 3rem;
+                font-size: 2rem;
+                color: @nav-color;
+                
+                &:hover {
+                    color: lighten(@everglade, 30%);
+                }
+                
+                @media @mobile{
+                    display: none;
+                }
+            }
+        }//ends login
+    }// ends nav-title
+}
