@@ -73,6 +73,7 @@ function Signup(props) {
         .post("https://wmplants-db.herokuapp.com/api/auth/register/", newUser)
         .then(response =>{
             console.log(response)
+            props.history.push("/")
         })
         .catch(error =>{
             debugger

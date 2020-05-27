@@ -64,13 +64,21 @@ const onInputChange = evt => {
   
 
   const onLogin = event =>  {
+    event.preventDefault()
+    const newLogin = {
+        username: loginValues.username,
+        password: loginValues.password
+    }
     axiosWithAuth()
-    .post("/api/auth/login", loginValues)
+    .post("/api/auth/login", newLogin)
     .then(response => {
         localStorage.setItem('token', response.data.token);
+        console.log(response);
+        debugger
         props.history.push("/dashboard")
     })
     .catch(err => {
+        debugger
         console.log(err)
     })
 }
@@ -92,7 +100,7 @@ const onInputChange = evt => {
         </header>
     </StyledDiv>
     <StyledForm>
-        <form onLogin={onLogin}>
+        <form onSubmit={onLogin}>
              <div className="forms">
                  <div className="form-heading">
                     <h2 className="frm-heading-txt">Welcome Back!</h2>
