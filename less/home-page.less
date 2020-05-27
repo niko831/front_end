@@ -1,8 +1,8 @@
-body{
-    .content-section{
+body {
+    .content-section {
 
 
-        .content{
+        .content {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
@@ -11,43 +11,43 @@ body{
             font-family: 'Nunito', sans-serif;
             margin: 1% 20% 0 37%;
             //border: 1px solid blue;
-            width: 30%;  
-            //position: absolute;
-           // top: 800px;
+            width: 30%;
 
-           @media @mobile{
-            margin: 9% 0rem 0 3rem;
-            width: 90%;
-            display: block;
+            @media @mobile {
+                margin: 9% 0rem 0 3rem;
+                width: 90%;
+                display: block;
             }
-            
 
-            p{
+
+            p {
                 margin-top: 3%;
-            }  
+            }
         }
     }
 
-    .btn{
-        text-align: center;
-        padding-top: 2rem;
+    .btn {
+        .button-Padding(2rem 0 0 0);
 
-        .button(@everglade);
+        @media @mobile {
+            .button-Padding(2rem 0 0 0);
+        }
+
+        .button(@everglade, @white);
     }
 
-    .btn-mobile{
+    .btn-mobile {
         display: none;
-        
+
 
         @media @mobile {
             display: block;
-            text-align: center;
-            padding-top: 2rem;
-        } 
-          
-        .button-mobile(@teaGreen)
-        
+            .button-Padding(2rem 0 0 0);
+        }
 
+        .button(@teaGreen, black)
     }
 
-}//body
+}
+
+//body

@@ -1,16 +1,17 @@
 // Mixins in here
 
-.button(@bg-color, @padding:1rem 7rem, @font-size:1.8rem){
-    button{
-        background-color:  @bg-color;
-        //@everglade
+.button(@bg-color, @font-color, @padding: 1rem 7rem, @font-size: 1.8rem) {
+    button {
+        background-color: @bg-color;
         text-decoration: none;
         padding: @padding;
         border-radius: 1rem;
-        color: white;
+        color: @font-color;
         font-size: @font-size;
+        text-align: center;
+        padding-top: 2rem;
 
-        @media @mobile{
+        @media @mobile {
             width: 70%;
         }
 
@@ -20,20 +21,8 @@
     }
 }
 
-.button-mobile(@bg-color, @padding:1rem 7rem, @font-size:1.8rem){
-    button{
-        background-color: @bg-color;
-        text-decoration: none;
-        padding: @padding;
-        border-radius: 1rem;
-        color: black;
-        font-size: @font-size;
-        width: 70%;
 
-        
-
-        &:hover {
-            background-color: lighten(@everglade, 5%);
-        }
-    }
+.button-Padding(@padding) {
+    text-align: center;
+    padding: @padding;
 }
