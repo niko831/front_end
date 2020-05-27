@@ -2,37 +2,46 @@ import React from "react"
 import {Link} from "react-router-dom"
 import * as yup from "yup"
 import {useState} from "react"
+import axios from "axios"
+
+import axiosWithAuth from "../utils/axiosWithAuth"
 
 import StyledDiv from "./styledComponents/StyledDiv"
 import StyledForm from "./styledComponents/FormStyle"
 
 import formSchemaSignup from "./validation/SignupSchema"
 
-function Signup() {
+function Signup(props) {
     const initialSignupValues = {
         username: "",
         password: "",
-        passwordconfirm : "",
-        phone: ""
+        phone_number: ""
       }
-      const initialErrorValues ={
+
+
+      const initialErrorValues = {
         username: "",
         password: "",
-        passwordconfirm: "",
-        phone: ""
+        //confirm: "",
+        phone_number: ""
       }
 
     const [formErrors, setFormErrors] = useState(initialErrorValues)  
     const [signupValues, setSignupValues] = useState(initialSignupValues)
+    const [newUser, setNewUser] = useState({
+        username: "",
+        password: "",
+        phone_number: "",
+    })
 
     const onChange = evt => {
         const name = evt.target.name
         const value = evt.target.value
       
         yup
-          .reach(formSchemaSignup, name)
-          .validate(value)  
-          .then(valid => {
+            .reach(formSchemaSignup, name)
+            .validate(value)  
+            .then(valid => {
               setFormErrors({
                   ...formErrors,
                   [name]: ""
@@ -51,10 +60,21 @@ function Signup() {
           ...signupValues,
           [name]: value
         })
-      
-      }
+        }
 
-    const onSubmit = {
+
+    const onSignup = event => {
+        setNewUser(signupValues)
+        event.preventDefault()
+        axiosWithAuth()
+        .post("/api/auth/register", newUser)
+        .then(response =>{
+            console.log(response)
+            props.history.push("/")
+        })
+        .catch(err => (
+            console.log(err)
+        ))
 
     }
 
@@ -73,12 +93,14 @@ function Signup() {
         </header>
     </StyledDiv>
     <StyledForm>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSignup}>
              <div className="forms">
                  <div className="form-heading">
                     <h2 className="frm-heading-txt">Lets get started!</h2>
                     <h3 className="frm-heading-txt">Create your account</h3>
                  </div>
+                
+                
                 <label name="username" className="label-text-1">Username:&nbsp;</label>
                 <input
                 className="form-item-1"
@@ -88,40 +110,45 @@ function Signup() {
                 value={signupValues.username}
                  />
                 <br></br>
-                <label name="phone" className="label-text-2">Phone Number: &nbsp;</label>
+               
+               
+                <label name="password" className="label-text-2">Password:&nbsp;</label>
                 <input 
                 className="form-item-2"
-                type="number"
-                name="phone"
-                onChange={onChange}
-                value={signupValues.phone}
-                />
-
-                <label name="password" className="label-text-3">Password:&nbsp;</label>
-                <input 
-                className="form-item-3"
                 type="password"
                 name="password"
                 onChange={onChange}
                 value={signupValues.password}
                 />
 
-                <label name="confirm" className="label-text-4">Confirm Password: &nbsp;</label>
+
+                {/* <label name="confirm" className="label-text-3">Confirm Password: &nbsp;</label>
                 <input
-                className="form-item-4"
+                className="form-item-3"
                 type="password"
                 name="confirm"
                 onChange={onChange}
-                value={signupValues.confirmpassword}
-                />
+                value={signupValues.confirm}
+                /> */}
+                
 
+
+                <label name="phone_number" className="label-text-4">Number: &nbsp;</label>
+                <input 
+                className="form-item-4"
+                type="number"
+                name="phone_number"
+                onChange={onChange}
+                value={signupValues.phone_number}
+                />
+               
 
 
                 <div className="form-schema-errors">
                     <div>{formSchemaSignup.username}</div>
                     <div>{formSchemaSignup.password}</div>
-                    <div>{formSchemaSignup.confirmpassword}</div>
-                    <div>{formSchemaSignup.phone}</div>
+                   {/* <div>{formSchemaSignup.confirmpassword}</div> */}
+                    <div>{formSchemaSignup.phone_number}</div>
                  </div>
 
                 <button className="submit-btn">Sign Up</button>
