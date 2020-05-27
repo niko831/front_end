@@ -144,4 +144,3 @@ const onInputChange = evt => {
 }
 
 export default Login;
-
