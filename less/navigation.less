@@ -1,8 +1,18 @@
 header {
+    @media @mobile{
+        height: 50%;
+    }
     .img-container{
         
+        @media @mobile{
+            height: 50%;
+        }
         img{
             width: 100%;
+
+            @media @mobile{
+                height: 40rem;
+            }
         }
     }//ends img
 
@@ -25,6 +35,7 @@ header {
         h1{
             padding: 5px 0;
             color: white;
+            margin-left: 3rem;
         }//ends h1
 
         .navigation{
@@ -81,12 +92,14 @@ header {
     .text-container{
         position: absolute;
         text-align: center;
-        top: 390%;
-        right: 35%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 80%);
 
         @media @mobile{
-            top: 100%;
-            right: 27%;
+            top: 50%;
+            right: 1%;
+            transform: translate(-48%, 125%);
         }
         
         
@@ -107,7 +120,7 @@ header {
             font-weight: bold;
 
             @media @mobile{
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
         }
     }

@@ -168,8 +168,23 @@ img {
   width: 100%;
   margin: 0 auto;
 }
+@media ( max-width: 500px )  {
+  header {
+    height: 50%;
+  }
+}
+@media ( max-width: 500px )  {
+  header .img-container {
+    height: 50%;
+  }
+}
 header .img-container img {
   width: 100%;
+}
+@media ( max-width: 500px )  {
+  header .img-container img {
+    height: 40rem;
+  }
 }
 header .nav-title {
   display: flex;
@@ -191,6 +206,7 @@ header .nav-title {
 header .nav-title h1 {
   padding: 5px 0;
   color: white;
+  margin-left: 3rem;
 }
 header .nav-title .navigation {
   font-family: 'Nunito', sans-serif;
@@ -233,13 +249,15 @@ header .nav-title .login a:hover {
 header .text-container {
   position: absolute;
   text-align: center;
-  top: 390%;
-  right: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 80%);
 }
 @media ( max-width: 500px )  {
   header .text-container {
-    top: 100%;
-    right: 27%;
+    top: 50%;
+    right: 1%;
+    transform: translate(-48%, 125%);
   }
 }
 header .text-container .plain {
@@ -260,12 +278,8 @@ header .text-container .bold {
 }
 @media ( max-width: 500px )  {
   header .text-container .bold {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
-}
-body .content-section .img-container2 img {
-  width: 100%;
-  height: 80rem;
 }
 body .content-section .content {
   display: flex;
@@ -275,13 +289,13 @@ body .content-section .content {
   font-size: 2.4rem;
   font-family: 'Nunito', sans-serif;
   margin: 1% 20% 0 37%;
-  border: 1px solid blue;
   width: 30%;
 }
 @media ( max-width: 500px )  {
   body .content-section .content {
-    margin: 5% 5% 0 15%;
-    width: 70%;
+    margin: 9% 0rem 0 3rem;
+    width: 90%;
+    display: block;
   }
 }
 body .content-section .content p {
@@ -290,6 +304,11 @@ body .content-section .content p {
 body .btn {
   text-align: center;
   padding-top: 2rem;
+}
+@media ( max-width: 500px )  {
+  body .btn {
+    text-align: center;
+  }
 }
 body .btn button {
   background-color: #235B2d;
@@ -318,6 +337,7 @@ body .btn-mobile {
     border-radius: 1rem;
     color: #235B2d;
     font-size: 1.8rem;
+    width: 59%;
   }
   body .btn-mobile button:hover {
     background-color: #2a6d36;
