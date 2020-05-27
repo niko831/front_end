@@ -1,6 +1,9 @@
 import styled from "styled-components"
 
 
+
+
+
 const StyledForm = styled.div `
     background: #F2F3F2;
     opacity: 0.95;
@@ -95,6 +98,12 @@ const StyledForm = styled.div `
         width: 230px;
     }
 
+    .form-schema-errors{
+        color:red;
+        position: absolute;
+        bottom: 22%;
+        left: 15%;
+    }
 
     .submit-btn {
         position: absolute;

@@ -4,6 +4,8 @@ import {Link} from "react-router-dom"
 import StyledDiv from "./styledComponents/StyledDiv"
 import StyledForm from "./styledComponents/FormStyle"
 
+import formSchema from "./validation/formSchemaLogin"
+
 function Signup(props) {
     const {
         values,
@@ -28,8 +30,8 @@ function Signup(props) {
         <form onSubmit={onSubmit}>
              <div className="forms">
                  <div className="form-heading">
-                    <h2 className="frm-heading-txt">Welcome Back!</h2>
-                    <h3 className="frm-heading-txt">Log into your account</h3>
+                    <h2 className="frm-heading-txt">Lets get started!</h2>
+                    <h3 className="frm-heading-txt">Create your account</h3>
                  </div>
                 <label name="username" className="label-text-1">Username:&nbsp;</label>
                 <input
@@ -66,6 +68,13 @@ function Signup(props) {
                 onChange={onInputChange}
                 value={values.confirmpassword}
                 />
+
+
+
+                <div className="form-schema-errors">
+                    <div>{errors.username}</div>
+                    <div>{errors.password}</div>
+                 </div>
 
                 <button className="submit-btn">Sign Up</button>
 

@@ -4,6 +4,8 @@ import {Link} from "react-router-dom"
 import StyledDiv from "./styledComponents/StyledDiv"
 import StyledForm from "./styledComponents/FormStyle"
 
+import formSchema from "./validation/formSchemaLogin"
+
 function Login(props) {
     const {
         values,
@@ -35,6 +37,7 @@ function Login(props) {
                     <h2 className="frm-heading-txt">Welcome Back!</h2>
                     <h3 className="frm-heading-txt">Log into your account</h3>
                  </div>
+                 
                 <label name="username" className="label-text-1">Username:&nbsp;</label>
                 <input
                 className="form-item-1"
@@ -52,6 +55,13 @@ function Login(props) {
                 onChange={onInputChange}
                 value={values.password}
                 />
+                
+
+                <div className="form-schema-errors">
+                 <div>{errors.username}</div>
+                 <div>{errors.password}</div>
+                 </div>
+
 
                 <button className="submit-btn">NEXT</button>
 
