@@ -91,7 +91,7 @@ const onInputChange = evt => {
     <>
     <StyledDiv>
         <header className="header-nav">
-            <Link to="/"><h2>Plant Parenthood</h2></Link> 
+            <Link to="/"><h2>Water My Plants</h2></Link> 
             <a href="/">Login</a>
             <a href="/signup">Sign Up</a>
             <div className="info">
