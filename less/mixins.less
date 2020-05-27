@@ -1,6 +1,6 @@
 // Mixins in here
 
-.button(@bg-color, @font-color, @padding: 1rem 7rem, @font-size: 1.8rem) {
+.button(@bg-color, @font-color, @padding: 1rem 7rem, @padding-mobile:@padding, @font-size: 1.8rem) {
     button {
         background-color: @bg-color;
         text-decoration: none;
@@ -13,6 +13,7 @@
 
         @media @mobile {
             width: 70%;
+            padding: @padding-mobile;
         }
 
         &:hover {
@@ -25,4 +26,61 @@
 .button-Padding(@padding) {
     text-align: center;
     padding: @padding;
+}
+
+//---------------------------------------------------------------About Page Mixins--------------------------------------------------------------------------------------------
+
+
+.about-title-style(@bg-color: fade(#2D6476,60%), @margins: 5% 5% 0 5%){
+    .title{
+        text-align: center;
+        margin: 5% 5% 0 5%;
+        border: 2px solid black;
+        padding: 2% 0;
+        font-family:'Nunito', sans-serif;
+        border-radius: 1rem;
+        background-color: @bg-color;
+
+        h2{
+            color: @white;
+        }
+    }
+}
+
+.teams-style(@bg-color: fade(@everglade,20%), @margin-lr:2% 5%){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: @margin-lr;  
+    background-color: @bg-color;
+}
+
+.person-style(@border-style:.2rem solid black, @margin-size:2%){
+    border: @border-style;
+    margin: @margin-size;
+    text-align: center;
+}
+
+.person-img-style(@width:40rem, @width-mobile:20rem){
+    width: @width;
+
+    @media @mobile {
+        width: @width-mobile;
+        height: auto;
+    }
+}
+
+.text-style(){
+    .text-container{
+        margin: 1rem 0;
+
+        h3{
+            font-size: 2rem;
+        }
+
+        h4{
+            font-size: 1.6rem;
+       }
+    }
 }

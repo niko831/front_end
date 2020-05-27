@@ -1,44 +1,18 @@
 body{
-
-    //background-color: @teaGreen;
     
     .teamContainer{
 
-        .title{
-            text-align: center;
-            margin: 5% 5% 0 5%;
-            border: 2px solid black;
-            padding: 2% 0;
-            font-family:'Nunito', sans-serif;
-            border-radius: 1rem;
-            background-color: fade(#2D6476,60%); 
-
-            h2{
-                color: white;
-            }
-        }
+        .about-title-style();
 
         .marketing{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            margin: 2% 5%;  
-            background-color: fade(@everglade,20%);
+            .teams-style();
 
             .person{
-                border: 2px solid black;
-                margin: 2%;
-                text-align: center;
+                .person-style();
                 
 
                 img{
-                    width: 400px;
-
-                    @media @mobile {
-                        width: 200px;
-                        height: auto;
-                    }
+                    .person-img-style();
                 }
                 .text-container{
                     margin: 1rem 0;
@@ -55,12 +29,7 @@ body{
         }
 
         .frontEnd{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            margin: 2% 5%;  
-            background-color: fade(@everglade,20%);
+            .teams-style(@bg-color: fade(@everglade,20%), @margin-lr:2% 5%);
 
             .person{
                 border: 2px solid black;
@@ -90,12 +59,7 @@ body{
         }
 
         .backend{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            margin: 2% 5%; 
-            background-color: fade(@everglade,20%);
+            .teams-style(@bg-color: fade(@everglade,20%), @margin-lr:2% 5%);
 
             .person{
                 border: 2px solid black;
@@ -125,12 +89,7 @@ body{
         }
 
         .iOS{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            margin: 2% 5%;   
-            background-color: fade(@everglade,20%);
+            .teams-style(@bg-color: fade(@everglade,20%), @margin-lr:2% 5%);
 
             .person{
                 border: 2px solid black;
@@ -161,12 +120,7 @@ body{
 
         
         .pm{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            margin: 2% 5%;  
-            background-color: fade(@everglade,20%); 
+            .teams-style(@bg-color: fade(@everglade,20%), @margin-lr:2% 5%);
 
             .person{
                 border: 2px solid black;
