@@ -4,6 +4,7 @@ import * as yup from "yup"
 import {useState} from "react"
 import axios from "axios"
 
+import axiosWithAuth from "../utils/axiosWithAuth"
 
 import StyledDiv from "./styledComponents/StyledDiv"
 import StyledForm from "./styledComponents/FormStyle"
@@ -11,7 +12,7 @@ import StyledForm from "./styledComponents/FormStyle"
 import formSchemaLogin from "./validation/LoginSchema"
 
 
-function Login() {
+function Login(props) {
     const initialErrorValues ={
         username: "",
         password: "",
@@ -26,14 +27,11 @@ function Login() {
     const [formErrors, setFormErrors] = useState(initialErrorValues)
     const [loginValues, setLoginValues] = useState(initialLoginValues)
    
-    const values = loginValues;
+    
 
    
 
-   const onLogin = {
-
-   }
-
+   
     //onChange Handler
 const onInputChange = evt => {
     const name = evt.target.name
@@ -58,12 +56,25 @@ const onInputChange = evt => {
       })
   
     setLoginValues({
-      ...values,
+      ...loginValues,
       [name]: value
     })
   
   }
   
+
+  const onLogin = event =>  {
+    axiosWithAuth()
+    .post("/api/auth/login", loginValues)
+    .then(response => {
+        localStorage.setItem('token', response.data.token);
+        props.history.push("/dashboard")
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
     return (
     
     //NavBar
@@ -94,7 +105,7 @@ const onInputChange = evt => {
                 type="text"
                 name="username"
                 onChange={onInputChange}
-                value={values.username}
+                value={loginValues.username}
                  />
                 <br></br>
                 <label name="password" className="label-text-3">Password:&nbsp;</label>
@@ -103,7 +114,7 @@ const onInputChange = evt => {
                 type="password"
                 name="password"
                 onChange={onInputChange}
-                value={values.password}
+                value={loginValues.password}
                 />
                 
 

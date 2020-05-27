@@ -11,28 +11,25 @@ import StyledForm from "./styledComponents/FormStyle"
 
 import formSchemaSignup from "./validation/SignupSchema"
 
+const initialSignupValues = {
+    username: "",
+    password: "",
+    phone_number: ""
+  }
+
+
+  const initialErrorValues = {
+    username: "",
+    password: "",
+    phone_number: ""
+  }
+
 function Signup(props) {
-    const initialSignupValues = {
-        username: "",
-        password: "",
-        phone_number: ""
-      }
-
-
-      const initialErrorValues = {
-        username: "",
-        password: "",
-        //confirm: "",
-        phone_number: ""
-      }
+  
 
     const [formErrors, setFormErrors] = useState(initialErrorValues)  
     const [signupValues, setSignupValues] = useState(initialSignupValues)
-    const [newUser, setNewUser] = useState({
-        username: "",
-        password: "",
-        phone_number: "",
-    })
+
 
     const onChange = evt => {
         const name = evt.target.name
@@ -58,26 +55,36 @@ function Signup(props) {
       
         setSignupValues({
           ...signupValues,
-          [name]: value
-        })
-        }
+          [name]: value,
+         })
+    }
 
+    
+    
 
     const onSignup = event => {
-        setNewUser(signupValues)
         event.preventDefault()
-        axiosWithAuth()
-        .post("/api/auth/register", newUser)
+        const newUser = {
+            username : signupValues.username,
+            password : signupValues.password,
+            phone_number : signupValues.phone_number,
+          }
+        axios
+        .post("https://wmplants-db.herokuapp.com/api/auth/register/", newUser)
         .then(response =>{
             console.log(response)
-            props.history.push("/")
         })
-        .catch(err => (
-            console.log(err)
-        ))
+        .catch(error =>{
+            debugger
+            console.log(error)
+        })
 
     }
 
+    // const newUserSet = () => {
+    //     setNewUser(signupValues)
+    //     onSignup()
+    // }
 
     return (
         <>
@@ -93,7 +100,7 @@ function Signup(props) {
         </header>
     </StyledDiv>
     <StyledForm>
-        <form onSubmit={onSignup}>
+        <form onSubmit={onSignup} >
              <div className="forms">
                  <div className="form-heading">
                     <h2 className="frm-heading-txt">Lets get started!</h2>

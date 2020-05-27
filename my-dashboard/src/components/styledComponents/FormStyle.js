@@ -30,7 +30,7 @@ const StyledForm = styled.div `
 
     .label-text-2{
         position: absolute;
-        top: 59%;
+        top: 35%;
         left: 25%;
         font-family: "Nunito";
     }
@@ -92,7 +92,7 @@ const StyledForm = styled.div `
         position: absolute;
         left: 25%;
         right: 0%;
-        top: 65%;
+        top: 53%;
         bottom: 0%;
         height: 20px;
         width: 230px;
