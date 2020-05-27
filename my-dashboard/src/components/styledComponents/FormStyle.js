@@ -159,8 +159,20 @@ const StyledForm = styled.div `
             
             
         }
+    
+       
     }
+        .p-login {
+                position: absolute;
+                left: 23%;
+                bottom: 0%;
+                
 
+                .here-link {
+                    text-decoration: none;
+                    color: #235B2D;
+                }
+            }
 
 `
 

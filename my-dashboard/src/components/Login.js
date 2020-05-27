@@ -91,9 +91,9 @@ const onInputChange = evt => {
     <>
     <StyledDiv>
         <header className="header-nav">
-            <Link to="/"><h2>Plant Parenthood</h2></Link> 
-            <a href="/">Login</a>
-            <a href="/signup">Sign Up</a>
+            <Link to="/"><h2>Water My Plants</h2></Link> 
+            <a href="/login">Login</a>
+            <a href="/">Sign Up</a>
             <div className="info">
                 {/* Dummy Links */}
                 <a href="/">Home</a>
@@ -129,8 +129,8 @@ const onInputChange = evt => {
                 
 
                 <div className="form-schema-errors">
-                    <div>{formSchemaLogin.username}</div>
-                    <div>{formSchemaLogin.password}</div>
+                    <div>{formErrors.username}</div>
+                    <div>{formErrors.password}</div>
                 </div>
 
 
