@@ -2,6 +2,7 @@
 
 body {
   background: url('./assets/dashBackground.png');
+  background-size: cover;
 }
 
 .App {
