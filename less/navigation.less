@@ -16,6 +16,12 @@ header {
         top: 1px;
         width: 100%;
 
+        @media @mobile{
+            flex-direction: column;
+            justify-content: center;
+            height: auto;
+        }
+
         h1{
             padding: 5px 0;
             color: white;
@@ -24,49 +30,74 @@ header {
         .navigation{
             font-family: 'Nunito', sans-serif;
             font-weight: 600;
-            margin-top: 15px;
+            margin-top: 1%;
 
             a{
                 text-decoration: none; 
-                margin: 0 10px;
+                margin: 0 3rem;
                 font-size: 2rem;
                 color: white;
                 
                 &:hover {
                     color: lighten(#235B2D, 20%);
-                  }
+                }
+
+                @media @mobile{
+                // display: flex;
+                // flex-direction: column;
+                // font-size: 1.5rem;
+                // margin: 1rem 1rem;
+                display: none;
+                }
             }
         }//end navigation
 
         .login{
             font-family: 'Nunito', sans-serif;
             font-weight: 600;
-            margin-top: 15px;
+            margin-top: 1%;
 
             a{
                 text-decoration: none;
-                margin: 0 1rem;
+                margin: 0 3rem;
                 font-size: 2rem;
                 color: white;
                 
                 &:hover {
                     color: lighten(#235B2D, 30%);
-                  }
+                }
+                
+                @media @mobile{
+                // display: flex;
+                // flex-direction: column;
+                // font-size: 1.5rem;
+                // margin: 1rem 1rem;
+                display: none;
+                }
             }
         }//ends login
     }// ends nav-title
 
     .text-container{
         position: absolute;
-        top: auto;
         text-align: center;
         top: 390%;
         right: 35%;
+
+        @media @mobile{
+            top: 100%;
+            right: 27%;
+        }
+        
         
         .plain{
             font-family: 'Nunito', sans-serif;  
             font-size: 6rem;
             color: white;
+
+            @media @mobile{
+                font-size: 3rem;
+            }
         }
 
         .bold{
@@ -74,6 +105,10 @@ header {
             font-size: 7.5rem;
             color: white;
             font-weight: bold;
+
+            @media @mobile{
+                font-size: 3rem;
+            }
         }
     }
 
