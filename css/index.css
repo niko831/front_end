@@ -217,7 +217,7 @@ header .nav-title .navigation {
 header .nav-title .navigation a {
   text-decoration: none;
   margin: 0 3rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: white;
 }
 header .nav-title .navigation a:hover {
@@ -227,6 +227,7 @@ header .nav-title .navigation a:hover {
   header .nav-title .navigation a {
     margin: 0 1rem 0 1rem;
     text-align: center;
+    font-size: 1.5rem;
   }
 }
 header .nav-title .login {
