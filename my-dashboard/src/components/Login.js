@@ -3,16 +3,19 @@ import {Link} from "react-router-dom"
 import * as yup from "yup"
 import {useState} from "react"
 import axios from "axios"
-
+//Axios Authinicaiton import with token auth
 import axiosWithAuth from "../utils/axiosWithAuth"
 
+//Styling Imports
 import StyledDiv from "./styledComponents/StyledDiv"
 import StyledForm from "./styledComponents/FormStyle"
 
+//Yup Schema
 import formSchemaLogin from "./validation/LoginSchema"
 
 
 function Login(props) {
+    // Initial variables with blank items
     const initialErrorValues ={
         username: "",
         password: "",
@@ -23,7 +26,7 @@ function Login(props) {
         password : ""
       }
 
-    
+    // Slices of state
     const [formErrors, setFormErrors] = useState(initialErrorValues)
     const [loginValues, setLoginValues] = useState(initialLoginValues)
    
@@ -32,7 +35,7 @@ function Login(props) {
    
 
    
-    //onChange Handler
+//onChange Handler/Yup Validator
 const onInputChange = evt => {
     const name = evt.target.name
     const value = evt.target.value
@@ -62,7 +65,7 @@ const onInputChange = evt => {
   
   }
   
-
+  //Login Handler/Login Axios Post Request
   const onLogin = event =>  {
     event.preventDefault()
     const newLogin = {
@@ -85,8 +88,6 @@ const onInputChange = evt => {
 
     return (
     
-    //NavBar
-    
     <>
     <StyledDiv>
         <header className="header-nav">
@@ -94,6 +95,7 @@ const onInputChange = evt => {
             <a href="/">Login</a>
             <a href="/signup">Sign Up</a>
             <div className="info">
+                {/* Dummy Links */}
                 <a href="/">Home</a>
                 <a href="/">About</a>
             </div>
@@ -115,8 +117,8 @@ const onInputChange = evt => {
                 onChange={onInputChange}
                 value={loginValues.username}
                  />
-                <br></br>
-                <label name="password" className="label-text-3">Password:&nbsp;</label>
+                
+                <label name="password" className="label-text-2">Password:&nbsp;</label>
                 <input 
                 className="form-item-2"
                 type="password"

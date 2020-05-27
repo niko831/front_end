@@ -4,13 +4,13 @@ import * as yup from "yup"
 import {useState} from "react"
 import axios from "axios"
 
-import axiosWithAuth from "../utils/axiosWithAuth"
-
+//Styling Imports
 import StyledDiv from "./styledComponents/StyledDiv"
 import StyledForm from "./styledComponents/FormStyle"
 
+//Yup Schema
 import formSchemaSignup from "./validation/SignupSchema"
-
+// Initial variables with blank items
 const initialSignupValues = {
     username: "",
     password: "",
@@ -26,11 +26,11 @@ const initialSignupValues = {
 
 function Signup(props) {
   
-
+    // Slices of state
     const [formErrors, setFormErrors] = useState(initialErrorValues)  
     const [signupValues, setSignupValues] = useState(initialSignupValues)
 
-
+    //onChange Handler/Yup Validator
     const onChange = evt => {
         const name = evt.target.name
         const value = evt.target.value
@@ -59,9 +59,7 @@ function Signup(props) {
          })
     }
 
-    
-    
-
+    //Login Handler/Login Axios Post Request
     const onSignup = event => {
         event.preventDefault()
         const newUser = {
@@ -82,11 +80,6 @@ function Signup(props) {
 
     }
 
-    // const newUserSet = () => {
-    //     setNewUser(signupValues)
-    //     onSignup()
-    // }
-
     return (
         <>
     <StyledDiv>
@@ -95,6 +88,7 @@ function Signup(props) {
             <a href="/">Login</a>
             <a href="/signup">Sign Up</a>
             <div className="info">
+                {/* Dummy Links */}
                 <a href="/">Home</a>
                 <a href="/">About</a>
             </div>
@@ -117,7 +111,6 @@ function Signup(props) {
                 onChange={onChange}
                 value={signupValues.username}
                  />
-                <br></br>
                
                
                 <label name="password" className="label-text-2">Password:&nbsp;</label>
@@ -128,20 +121,8 @@ function Signup(props) {
                 onChange={onChange}
                 value={signupValues.password}
                 />
-
-
-                {/* <label name="confirm" className="label-text-3">Confirm Password: &nbsp;</label>
-                <input
-                className="form-item-3"
-                type="password"
-                name="confirm"
-                onChange={onChange}
-                value={signupValues.confirm}
-                /> */}
-                
-
-
-                <label name="phone_number" className="label-text-4">Number: &nbsp;</label>
+           
+                <label name="phone_number" className="label-text-4">Phone Number: &nbsp;</label>
                 <input 
                 className="form-item-4"
                 type="number"
@@ -150,12 +131,9 @@ function Signup(props) {
                 value={signupValues.phone_number}
                 />
                
-
-
                 <div className="form-schema-errors">
                     <div>{formSchemaSignup.username}</div>
                     <div>{formSchemaSignup.password}</div>
-                   {/* <div>{formSchemaSignup.confirmpassword}</div> */}
                     <div>{formSchemaSignup.phone_number}</div>
                  </div>
 

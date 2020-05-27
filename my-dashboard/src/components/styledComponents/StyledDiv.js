@@ -32,7 +32,14 @@ const StyledDiv = styled.div`
             flex-direction: row;
             color: white;
             margin-left: 20px;
+            
+            
+            
+            &.pointer{
+            cursor: "pointer";
+        }
          }
+
 
         
     }
