@@ -1,4 +1,3 @@
-import React from "react"
 import * as yup from "yup"
 
 
@@ -12,14 +11,13 @@ const formSchemaSignup= yup.object().shape({
     password: yup.string()
     .required("You must enter a password")
     .min(5, "Your password must be at least five characters long"),
-    passwordconfirm: yup.string()
+    confirm: yup.string()
     .required("You must confirm your password")
     .oneOf([yup.ref('password'), null], 'Passwords must match'),
     phone: yup.string()
     .matches(phoneRegExp, 'Phone number is not valid')
     .required("You must enter a phone number")
-    
-
 })
+
 
 export default formSchemaSignup

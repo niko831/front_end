@@ -1,5 +1,5 @@
-import React from "react"
 import * as yup from "yup"
+
 
 const formSchemaLogin= yup.object().shape({
     username: yup.string()
@@ -10,5 +10,3 @@ const formSchemaLogin= yup.object().shape({
 })
 
 export default formSchemaLogin
-
-

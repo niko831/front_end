@@ -1,19 +1,67 @@
 import React from "react"
 import {Link} from "react-router-dom"
+import * as yup from "yup"
+import {useState} from "react"
 
 import StyledDiv from "./styledComponents/StyledDiv"
 import StyledForm from "./styledComponents/FormStyle"
 
-import formSchema from "./validation/formSchemaLogin"
+import formSchemaLogin from "./validation/LoginSchema"
 
-function Login(props) {
-    const {
-        values,
-        onInputChange,
-        onSubmit,
-        errors,
-    } = props
 
+function Login() {
+    const initialErrorValues ={
+        username: "",
+        password: "",
+      }
+      
+      const initialLoginValues = {
+        username : "",
+        password : ""
+      }
+
+    
+    const [formErrors, setFormErrors] = useState(initialErrorValues)
+    const [loginValues, setLoginValues] = useState(initialLoginValues)
+   
+    const values = loginValues;
+
+   
+
+   const onSubmit = {
+
+   }
+
+    //onChange Handler
+const onInputChange = evt => {
+    const name = evt.target.name
+    const value = evt.target.value
+  
+    yup
+      .reach(formSchemaLogin, name)
+      .validate(value)  
+      .then( valid => {
+          setFormErrors({
+              ...formErrors,
+              [name]: ""
+            });
+      })    
+      .catch( err => { 
+          console.log(err.error)
+          setFormErrors({
+              ...formErrors,
+              [name]: err.errors[0]
+            });
+         
+      })
+  
+    setLoginValues({
+      ...values,
+      [name]: value
+    })
+  
+  }
+  
     return (
     
     //NavBar
@@ -58,8 +106,8 @@ function Login(props) {
                 
 
                 <div className="form-schema-errors">
-                 <div>{errors.username}</div>
-                 <div>{errors.password}</div>
+                 <div>{formSchemaLogin.username}</div>
+                 <div>{formSchemaLogin.password}</div>
                  </div>
 
 
