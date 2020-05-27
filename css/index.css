@@ -407,7 +407,7 @@ body .btn-mobile {
   }
 }
 body .btn-mobile button {
-  background-color: #CDEFB3;
+  background-color: white;
   text-decoration: none;
   padding: 1rem 7rem;
   border-radius: 1rem;
@@ -425,22 +425,21 @@ body .btn-mobile button:hover {
   background-color: #2a6d36;
 }
 body {
-  background-color: #2D6476;
+  background-color: #CDEFB3;
 }
 body .teamContainer {
   border: 1px solid red;
 }
 body .teamContainer .title {
   text-align: center;
-  margin: 5% 0 0 0;
+  margin: 5% 5% 0 5%;
   border: 2px solid black;
   padding: 2% 0;
   font-family: 'Nunito', sans-serif;
   border-radius: 1rem;
 }
-body .teamContainer .title p {
-  font-size: 2rem;
-  color: #CDEFB3;
+body .teamContainer .title h2 {
+  color: black;
 }
 body .teamContainer .marketing {
   display: flex;
@@ -454,6 +453,12 @@ body .teamContainer .marketing .person {
   margin: 2%;
   text-align: center;
 }
+body .teamContainer .marketing .person h3 {
+  font-size: 2rem;
+}
+body .teamContainer .marketing .person h4 {
+  font-size: 1.6rem;
+}
 body .teamContainer .frontEnd {
   display: flex;
   flex-direction: row;
@@ -465,6 +470,12 @@ body .teamContainer .frontEnd .person {
   border: 1px solid seagreen;
   margin: 2%;
   text-align: center;
+}
+body .teamContainer .frontEnd h3 {
+  font-size: 2rem;
+}
+body .teamContainer .frontEnd h4 {
+  font-size: 1.6rem;
 }
 body .teamContainer .backend {
   display: flex;
@@ -478,6 +489,12 @@ body .teamContainer .backend .person {
   margin: 2%;
   text-align: center;
 }
+body .teamContainer .backend h3 {
+  font-size: 2rem;
+}
+body .teamContainer .backend h4 {
+  font-size: 1.6rem;
+}
 body .teamContainer .iOS {
   display: flex;
   flex-direction: row;
@@ -490,6 +507,12 @@ body .teamContainer .iOS .person {
   margin: 2%;
   text-align: center;
 }
+body .teamContainer .iOS h3 {
+  font-size: 2rem;
+}
+body .teamContainer .iOS h4 {
+  font-size: 1.6rem;
+}
 body .teamContainer .pm {
   display: flex;
   flex-direction: row;
@@ -501,4 +524,10 @@ body .teamContainer .pm .person {
   border: 1px solid seagreen;
   margin: 2%;
   text-align: center;
+}
+body .teamContainer .pm h3 {
+  font-size: 2rem;
+}
+body .teamContainer .pm h4 {
+  font-size: 1.6rem;
 }
