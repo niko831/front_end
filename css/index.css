@@ -290,11 +290,10 @@ header .nav-title-about {
 @media ( max-width: 500px )  {
   header .nav-title-about {
     align-content: center;
-    height: auto;
   }
 }
 header .nav-title-about h1 {
-  padding: 5px 0;
+  padding: 0.5rem 0;
   color: white;
   margin-left: 3rem;
 }
@@ -312,6 +311,7 @@ header .nav-title-about .navigation {
 @media ( max-width: 500px )  {
   header .nav-title-about .navigation {
     margin: 2% 0 0 7%;
+    width: 40%;
   }
 }
 header .nav-title-about .navigation a {
@@ -325,8 +325,9 @@ header .nav-title-about .navigation a:hover {
 }
 @media ( max-width: 500px )  {
   header .nav-title-about .navigation a {
-    margin: 0 1rem 0 1rem;
+    margin: 0 1%;
     text-align: center;
+    font-size: 1.6rem;
   }
 }
 header .nav-title-about .login {
@@ -424,12 +425,6 @@ body .btn-mobile button {
 body .btn-mobile button:hover {
   background-color: #2a6d36;
 }
-body {
-  background-color: #CDEFB3;
-}
-body .teamContainer {
-  border: 1px solid red;
-}
 body .teamContainer .title {
   text-align: center;
   margin: 5% 5% 0 5%;
@@ -437,9 +432,10 @@ body .teamContainer .title {
   padding: 2% 0;
   font-family: 'Nunito', sans-serif;
   border-radius: 1rem;
+  background-color: rgba(45, 100, 118, 0.6);
 }
 body .teamContainer .title h2 {
-  color: black;
+  color: white;
 }
 body .teamContainer .marketing {
   display: flex;
@@ -447,16 +443,29 @@ body .teamContainer .marketing {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 2% 5%;
+  background-color: rgba(35, 91, 45, 0.2);
 }
 body .teamContainer .marketing .person {
-  border: 1px solid seagreen;
+  border: 2px solid black;
   margin: 2%;
   text-align: center;
 }
-body .teamContainer .marketing .person h3 {
+body .teamContainer .marketing .person img {
+  width: 400px;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .marketing .person img {
+    width: 200px;
+    height: auto;
+  }
+}
+body .teamContainer .marketing .person .text-container {
+  margin: 1rem 0;
+}
+body .teamContainer .marketing .person .text-container h3 {
   font-size: 2rem;
 }
-body .teamContainer .marketing .person h4 {
+body .teamContainer .marketing .person .text-container h4 {
   font-size: 1.6rem;
 }
 body .teamContainer .frontEnd {
@@ -464,17 +473,30 @@ body .teamContainer .frontEnd {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 5%;
+  margin: 2% 5%;
+  background-color: rgba(35, 91, 45, 0.2);
 }
 body .teamContainer .frontEnd .person {
-  border: 1px solid seagreen;
+  border: 2px solid black;
   margin: 2%;
   text-align: center;
 }
-body .teamContainer .frontEnd h3 {
+body .teamContainer .frontEnd .person img {
+  width: 400px;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .frontEnd .person img {
+    width: 200px;
+    height: auto;
+  }
+}
+body .teamContainer .frontEnd .person .text-container {
+  margin: 1rem 0;
+}
+body .teamContainer .frontEnd .person .text-container h3 {
   font-size: 2rem;
 }
-body .teamContainer .frontEnd h4 {
+body .teamContainer .frontEnd .person .text-container h4 {
   font-size: 1.6rem;
 }
 body .teamContainer .backend {
@@ -482,17 +504,30 @@ body .teamContainer .backend {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 5%;
+  margin: 2% 5%;
+  background-color: rgba(35, 91, 45, 0.2);
 }
 body .teamContainer .backend .person {
-  border: 1px solid seagreen;
+  border: 2px solid black;
   margin: 2%;
   text-align: center;
 }
-body .teamContainer .backend h3 {
+body .teamContainer .backend .person img {
+  width: 400px;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .backend .person img {
+    width: 200px;
+    height: auto;
+  }
+}
+body .teamContainer .backend .person .text-container {
+  margin: 1rem 0;
+}
+body .teamContainer .backend .person .text-container h3 {
   font-size: 2rem;
 }
-body .teamContainer .backend h4 {
+body .teamContainer .backend .person .text-container h4 {
   font-size: 1.6rem;
 }
 body .teamContainer .iOS {
@@ -500,17 +535,30 @@ body .teamContainer .iOS {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 5%;
+  margin: 2% 5%;
+  background-color: rgba(35, 91, 45, 0.2);
 }
 body .teamContainer .iOS .person {
-  border: 1px solid seagreen;
+  border: 2px solid black;
   margin: 2%;
   text-align: center;
 }
-body .teamContainer .iOS h3 {
+body .teamContainer .iOS .person img {
+  width: 400px;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .iOS .person img {
+    width: 200px;
+    height: auto;
+  }
+}
+body .teamContainer .iOS .person .text-container {
+  margin: 1rem 0;
+}
+body .teamContainer .iOS .person .text-container h3 {
   font-size: 2rem;
 }
-body .teamContainer .iOS h4 {
+body .teamContainer .iOS .person .text-container h4 {
   font-size: 1.6rem;
 }
 body .teamContainer .pm {
@@ -518,16 +566,29 @@ body .teamContainer .pm {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 5%;
+  margin: 2% 5%;
+  background-color: rgba(35, 91, 45, 0.2);
 }
 body .teamContainer .pm .person {
-  border: 1px solid seagreen;
+  border: 2px solid black;
   margin: 2%;
   text-align: center;
 }
-body .teamContainer .pm h3 {
+body .teamContainer .pm .person img {
+  width: 400px;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .pm .person img {
+    width: 200px;
+    height: auto;
+  }
+}
+body .teamContainer .pm .person .text-container {
+  margin: 1rem 0;
+}
+body .teamContainer .pm .person .text-container h3 {
   font-size: 2rem;
 }
-body .teamContainer .pm h4 {
+body .teamContainer .pm .person .text-container h4 {
   font-size: 1.6rem;
 }
