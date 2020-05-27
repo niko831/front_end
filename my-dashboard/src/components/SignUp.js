@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import {Link, NavLink} from "react-router-dom"
 import * as yup from "yup"
 import {useState} from "react"
 import axios from "axios"
@@ -10,27 +10,47 @@ import StyledForm from "./styledComponents/FormStyle"
 
 //Yup Schema
 import formSchemaSignup from "./validation/SignupSchema"
+
+
+const formSchema = yup.object().shape({
+    username: 
+        yup
+        .string()
+        .required('Please enter your name'),
+    
+        phone_number: 
+        yup
+        .string()
+        .required('Please enter your phone number')
+        .length(12,'Please enter a VALID phone number in the following format 123-123-1234'),
+    
+        password: 
+        yup
+        .string()
+        
+        .required('Please create a password')
+        .min(4, "Your password must be 6 characters long")
+        
+    })
+
+
 // Initial variables with blank items
-const initialSignupValues = {
-    username: "",
-    password: "",
-    phone_number: ""
-  }
-
-
-  const initialErrorValues = {
-    username: "",
-    password: "",
-    phone_number: ""
-  }
 
 function Signup(props) {
-  
     // Slices of state
-    const [formErrors, setFormErrors] = useState(initialErrorValues)  
-    const [signupValues, setSignupValues] = useState(initialSignupValues)
+    const [formErrors, setFormErrors] = useState({
+        username: "",
+        password: "",
+        phone_number: ""
+      })  
 
-    //onChange Handler/Yup Validator
+    const [signupValues, setSignupValues] = useState({
+        username: "",
+        password: "",
+        phone_number: ""
+      })
+
+    //onChange Handler/yup Validator
     const onChange = evt => {
         const name = evt.target.name
         const value = evt.target.value
@@ -132,12 +152,13 @@ function Signup(props) {
                 />
                
                 <div className="form-schema-errors">
-                    <div>{formSchemaSignup.username}</div>
-                    <div>{formSchemaSignup.password}</div>
-                    <div>{formSchemaSignup.phone_number}</div>
+                    <div>{formErrors.username}</div>
+                    <div>{formErrors.password}</div>
+                    <div>{formErrors.phone_number}</div>
                  </div>
 
                 <button className="submit-btn">Sign Up</button>
+                <p className="p-login">Already have an account? Log in <NavLink className="here-link" to="/login">here</NavLink>!</p>
 
             </div>
         </form>

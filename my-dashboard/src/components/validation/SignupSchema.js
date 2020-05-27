@@ -9,7 +9,8 @@ const formSchemaSignup= yup.object().shape({
     .required("You must enter a password")
     .min(5, "Your password must be at least five characters long"),
     phone_number: yup.string()
-    .required("You must enter a phone number")
+    .length(10,'Please enter a VALID phone number in the following format 1234567890')
+    .max(12),
 })
 
 
