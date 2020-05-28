@@ -363,7 +363,7 @@ body .content-section .content {
 }
 @media ( max-width: 500px )  {
   body .content-section .content {
-    margin: 9% 0rem 0 3rem;
+    margin: 3% 0rem 0 2rem;
     width: 90%;
     display: block;
   }
