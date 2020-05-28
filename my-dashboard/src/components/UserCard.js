@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
+
+//Assets
 import Image from '../assets/dashBackground.png';
 
 import '../App.css'
 
 const UserCard = () => {
 
+    const userState = useContext(UserContext);
+    const setUserState = useContext(UserContext);
+
     return (
         <div className='userCard'>
         <a href='/dashboard' aria-label='Close User Info Modal Box'>×</a>
-        <img src={Image}/>
+        <img src={Image} alt='Profile'/>
         <form>
         <label>
             <p>Username</p>

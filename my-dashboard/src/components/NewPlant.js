@@ -1,33 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import { UserContext } from '../contexts/UserContext';
 
-const NewPlant = () => {
+const NewPlant = (props) => {
 
-    const [plantList, setPlantList] = useState([]);
+    // const [plantList, setPlantList] = useState([]);
+    const user_id = useContext(UserContext)
 
     const [plant, setPlant] = useState({
         nickname: '',
         species: '',
         h2o_frequency: '',
-        user_id: ''
+        id: ''
     })
 
     const addNewPlant = e => {
-        e.preventDefault();
 
         axiosWithAuth().post('/api/plants/', {
             nickname: plant.nickname,
             species:  plant.species,
-            h2o_frequency: plant.h2o_frequency,
+            h2o_frequency: plant.h2o_frequency
         })
         .then( res => {
             console.log('New Plant POST Success', res)
-            axiosWithAuth().get('/api/plants')
-                           .then( res => {
-                                console.log('GET after New Plant POST Success', res)
-                                setPlantList(res.data)
-                           })
-                           .catch( err => console.log(err))
+            axiosWithAuth().get(`/api/users/${user_id}/plants`)
+            .then( res => {
+                console.log('Successful GET request for PlantList', res)
+                setPlant(res.data)
+            })
+            .catch( err => {
+                console.log('Error GET request for PlantList', err)
+            })
         })
         .catch (err => console.log('Error POST for add new plant', err))
     }

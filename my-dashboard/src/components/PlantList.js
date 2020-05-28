@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import '../App.css'
-import axiosWithAuth from '../utils/axiosWithAuth';
+import React, { useState, useEffect, useContext } from 'react';
 
-const PlantList = () => {
+import '../App.css'
+
+import axiosWithAuth from '../utils/axiosWithAuth';
+import { UserContext } from '../contexts/UserContext';
+
+const PlantList = (props) => {
+
+    // const user_id = window.localStorage.getItem('id')
+    const user_id = useContext(UserContext)
 
     const [plantList, setPlantList] = useState([{
         nickname: '',
         species: '',
-        h2o_frequency: ''
+        h2o_frequency: '',
+        id: ''
     }]);
 
     useEffect( () => {
         const fetchPlants = () => {
-            axiosWithAuth().get('/api/plants')
+            axiosWithAuth().get(`/api/users/${user_id}/plants`)
                            .then( res => {
                                console.log('Successful GET request for PlantList', res)
                                setPlantList(res.data)
@@ -26,6 +33,19 @@ const PlantList = () => {
 
     console.log(plantList)
 
+    const deletePlant = () => {
+        
+        axiosWithAuth().delete(`/api/plants/${plantList[0].id}`)
+        .then( res => {
+        //    props.history.push('/dashboard') 
+           console.log('Deleted', res)
+        })
+        .catch( err => {
+            console.log('Error Deleting', err)
+        })
+
+    }
+
     return (
         <div className="plantList">
         {plantList.map((plant)=> {
@@ -34,6 +54,7 @@ const PlantList = () => {
                 <h2>Nickname: {plant.nickname}</h2>
                 <h3>Species: {plant.species}</h3>
                 <h3>Water Frequency: {plant.h2o_frequency}</h3>
+                <button onClick={deletePlant}>Delete</button>
                 </div>
                 )
             })}

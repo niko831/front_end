@@ -2,7 +2,7 @@ import React from "react"
 import {Link} from "react-router-dom"
 import * as yup from "yup"
 import {useState} from "react"
-import axios from "axios"
+// import axios from "axios"
 //Axios Authinicaiton import with token auth
 import axiosWithAuth from "../utils/axiosWithAuth"
 
@@ -26,10 +26,10 @@ function Login(props) {
         password : ""
       }
 
+
     // Slices of state
     const [formErrors, setFormErrors] = useState(initialErrorValues)
     const [loginValues, setLoginValues] = useState(initialLoginValues)
-   
     
 
    
@@ -76,6 +76,7 @@ const onInputChange = evt => {
     .post("/api/auth/login", newLogin)
     .then(response => {
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('id', response.data.id);
         console.log(response);
         debugger
         props.history.push("/dashboard")

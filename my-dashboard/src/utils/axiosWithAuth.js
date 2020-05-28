@@ -7,7 +7,7 @@ const axiosWithAuth = () => {
         headers: {
             authorization: token
         },
-        baseURL: 'https://wmplants-db.herokuapp.com'
+        baseURL: 'http://localhost:5000'
     })
 }
 
