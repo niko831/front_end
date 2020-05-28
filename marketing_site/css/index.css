@@ -520,7 +520,7 @@ body .teamContainer .frontEnd .person {
   text-align: center;
 }
 body .teamContainer .frontEnd .person img {
-  width: 400px;
+  width: 300px;
 }
 @media ( max-width: 500px )  {
   body .teamContainer .frontEnd .person img {
@@ -568,7 +568,7 @@ body .teamContainer .backend .person {
   text-align: center;
 }
 body .teamContainer .backend .person img {
-  width: 400px;
+  width: 300px;
 }
 @media ( max-width: 500px )  {
   body .teamContainer .backend .person img {
@@ -616,7 +616,7 @@ body .teamContainer .iOS .person {
   text-align: center;
 }
 body .teamContainer .iOS .person img {
-  width: 400px;
+  width: 300px;
 }
 @media ( max-width: 500px )  {
   body .teamContainer .iOS .person img {
@@ -644,7 +644,7 @@ body .teamContainer .iOS .person .text-container h4 {
     font-size: 1.3rem;
   }
 }
-body .teamContainer .pm {
+body .teamContainer .pl {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -654,41 +654,41 @@ body .teamContainer .pm {
   border-radius: 0.5rem;
 }
 @media ( max-width: 500px )  {
-  body .teamContainer .pm {
+  body .teamContainer .pl {
     font-size: 1.6rem;
   }
 }
-body .teamContainer .pm .person {
+body .teamContainer .pl .person {
   border: 0.2rem solid black;
   margin: 2%;
   text-align: center;
 }
-body .teamContainer .pm .person img {
-  width: 400px;
+body .teamContainer .pl .person img {
+  width: 300px;
 }
 @media ( max-width: 500px )  {
-  body .teamContainer .pm .person img {
+  body .teamContainer .pl .person img {
     width: 200px;
     height: auto;
   }
 }
-body .teamContainer .pm .person .text-container {
+body .teamContainer .pl .person .text-container {
   margin: 1rem 0;
 }
-body .teamContainer .pm .person .text-container h3 {
+body .teamContainer .pl .person .text-container h3 {
   font-size: 2rem;
 }
 @media ( max-width: 500px )  {
-  body .teamContainer .pm .person .text-container h3 {
+  body .teamContainer .pl .person .text-container h3 {
     font-size: 1.6rem;
   }
 }
-body .teamContainer .pm .person .text-container h4 {
+body .teamContainer .pl .person .text-container h4 {
   font-size: 1.6rem;
   margin: 1rem 0 0 0;
 }
 @media ( max-width: 500px )  {
-  body .teamContainer .pm .person .text-container h4 {
+  body .teamContainer .pl .person .text-container h4 {
     font-size: 1.3rem;
   }
 }
