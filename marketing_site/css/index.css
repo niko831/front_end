@@ -144,7 +144,7 @@ h5 {
   font-family: 'Nunito', sans-serif;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 h2 {
   font-size: 3.2rem;
@@ -206,7 +206,7 @@ header .nav-title h1 {
 header .nav-title .navigation {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  margin-top: 1%;
+  margin-top: 0.7%;
 }
 @media ( max-width: 500px )  {
   header .nav-title .navigation {
@@ -233,7 +233,7 @@ header .nav-title .navigation a:hover {
 header .nav-title .login {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  margin-top: 1%;
+  margin-top: 0.7%;
 }
 header .nav-title .login a {
   text-decoration: none;
@@ -308,7 +308,7 @@ header .nav-title-about h1 {
 header .nav-title-about .navigation {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  margin-top: 1%;
+  margin-top: 0.7%;
 }
 @media ( max-width: 500px )  {
   header .nav-title-about .navigation {
@@ -335,7 +335,7 @@ header .nav-title-about .navigation a:hover {
 header .nav-title-about .login {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  margin-top: 1%;
+  margin-top: 0.7%;
 }
 header .nav-title-about .login a {
   text-decoration: none;
