@@ -7,23 +7,7 @@ import Image from '../assets/dashBackground.png';
 
 import '../App.css'
 
-const UserCard = (props) => {
-
-
-    const handleLogout = e => {
-        e.preventDefault();
-
-        axiosWithAuth().get('/api/auth/logout')
-                       .then( res => {
-                        //    console.log('Successfully logged out', res)
-                           localStorage.clear('token')
-                           localStorage.clear('id')
-                           props.history.push('/login')
-                       })
-                       .catch( err => {
-                           console.log('Error logging out', err)
-                       })
-    }
+const EditPlant = () => {
 
     const user_id = useContext(UserContext)
 
@@ -58,7 +42,19 @@ const UserCard = (props) => {
     return (
         <div className='userCard'>
         <a href='/dashboard' aria-label='Close User Info Modal Box'>×</a>
-        <button onClick={handleLogout}>LOG OUT</button>
+        <img src={Image} alt='Profile'/>
+        <form>
+        <label>
+            <p>Username</p>
+            <input type='text'/>
+        </label>
+        <label>
+            <p>Phone Number</p>
+            <input type='text'/>
+        </label>
+        <button>Save Changes</button>
+        </form>
+        <button>LOG OUT</button>
         <form onSubmit={editUser} id="userForm">
           <input
             type="text"
@@ -74,10 +70,10 @@ const UserCard = (props) => {
             value={user.phone_number}
             onChange={changeHandler}
           />
-          <button type="submit">Save Changes</button>
+          <button type="submit">Edit Username</button>
         </form>
         </div>
     )
 }
 
-export default UserCard
+export default EditPlant

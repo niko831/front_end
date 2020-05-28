@@ -88,7 +88,7 @@ function Signup(props) {
             phone_number : signupValues.phone_number,
           }
         axios
-        .post("http://localhost:5000/api/auth/register/", newUser)
+        .post("https://wmplants-db.herokuapp.com/api/auth/register/", newUser)
         .then(response =>{
             console.log(response)
             props.history.push("/")

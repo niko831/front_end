@@ -7,13 +7,14 @@ import Login from './components/Login';
 import Signup from './components/SignUp'
 import PrivateRoute from './components/PrivateRoute';
 import UserCard from './components/UserCard';
-
+ 
 import { UserContext } from './contexts/UserContext';
 
 
 function App() {
 
   // CONTEXT STATE
+
   const user_id = window.localStorage.getItem('id')
 
   const [userState, setUserState] = useState({
@@ -21,10 +22,17 @@ function App() {
     phone_number: ''
   })
 
+  const [plantList, setPlantList] = useState([{
+    nickname: '',
+    species: '',
+    h2o_frequency: '',
+    id: ''
+}]);
+
   return (
 
     <Router>
-    <UserContext.Provider value={user_id} userState={userState} setUserState={setUserState}>
+    <UserContext.Provider  value={user_id} userState={userState} setUserState={setUserState}>
     <div className="App">
       <Route exact path='/' component={Signup}/>
       <Route exact path='/login' component={Login}/>

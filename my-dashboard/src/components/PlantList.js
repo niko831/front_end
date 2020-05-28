@@ -7,8 +7,7 @@ import { UserContext } from '../contexts/UserContext';
 
 const PlantList = (props) => {
 
-    // const user_id = window.localStorage.getItem('id')
-    const user_id = useContext(UserContext)
+    const user_id = window.localStorage.getItem('id')
 
     const [plantList, setPlantList] = useState([{
         nickname: '',
@@ -16,6 +15,7 @@ const PlantList = (props) => {
         h2o_frequency: '',
         id: ''
     }]);
+
 
     useEffect( () => {
         const fetchPlants = () => {
@@ -31,14 +31,33 @@ const PlantList = (props) => {
         fetchPlants()
     }, [setPlantList])
 
-    console.log(plantList)
+    // console.log('plantList:', plantList)
 
-    const deletePlant = () => {
-        
-        axiosWithAuth().delete(`/api/plants/${plantList[0].id}`)
+
+
+
+  const updatePlants = () => {
+    axiosWithAuth().get(`/api/users/${user_id}/plants`)
+                   .then( res => {
+                       console.log('Successful GET request for PlantList', res)
+                       setPlantList(res.data)
+                   })
+                   .catch( err => {
+                       console.log('Error GET request for PlantList', err)
+                   })
+            }
+
+
+
+
+
+    const deletePlant = id => {
+
+        axiosWithAuth().delete(`/api/plants/${id}`)
         .then( res => {
         //    props.history.push('/dashboard') 
            console.log('Deleted', res)
+           updatePlants()
         })
         .catch( err => {
             console.log('Error Deleting', err)
@@ -46,15 +65,17 @@ const PlantList = (props) => {
 
     }
 
+
     return (
         <div className="plantList">
         {plantList.map((plant)=> {
+
                 return (
-                <div className="displayedPlant">
+                <div className="displayedPlant" key={plant.id}>
                 <h2>Nickname: {plant.nickname}</h2>
                 <h3>Species: {plant.species}</h3>
                 <h3>Water Frequency: {plant.h2o_frequency}</h3>
-                <button onClick={deletePlant}>Delete</button>
+                <button onClick={() => deletePlant(plant.id)}>Delete</button>
                 </div>
                 )
             })}
