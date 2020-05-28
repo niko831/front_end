@@ -431,15 +431,26 @@ body .btn-mobile button:hover {
 }
 body .teamContainer .title {
   text-align: center;
-  margin: 5% 5% 0 5%;
+  margin: 2% 5% 0 5%;
   border: 2px solid black;
-  padding: 2% 0;
+  padding: 1% 0;
   font-family: 'Nunito', sans-serif;
   border-radius: 1rem;
   background-color: rgba(45, 100, 118, 0.6);
 }
+@media ( max-width: 500px )  {
+  body .teamContainer .title {
+    margin: 3% 5% 0 5%;
+  }
+}
 body .teamContainer .title h2 {
   color: white;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .title h2 {
+    font-size: 2rem;
+    margin-top: 2%;
+  }
 }
 body .teamContainer .marketing {
   display: flex;
@@ -448,6 +459,12 @@ body .teamContainer .marketing {
   justify-content: space-evenly;
   margin: 2% 5%;
   background-color: rgba(35, 91, 45, 0.2);
+  border-radius: 0.5rem;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .marketing {
+    font-size: 1.6rem;
+  }
 }
 body .teamContainer .marketing .person {
   border: 0.2rem solid black;
@@ -469,8 +486,19 @@ body .teamContainer .marketing .person .text-container {
 body .teamContainer .marketing .person .text-container h3 {
   font-size: 2rem;
 }
+@media ( max-width: 500px )  {
+  body .teamContainer .marketing .person .text-container h3 {
+    font-size: 1.6rem;
+  }
+}
 body .teamContainer .marketing .person .text-container h4 {
   font-size: 1.6rem;
+  margin: 1rem 0 0 0;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .marketing .person .text-container h4 {
+    font-size: 1.3rem;
+  }
 }
 body .teamContainer .frontEnd {
   display: flex;
@@ -479,9 +507,15 @@ body .teamContainer .frontEnd {
   justify-content: space-evenly;
   margin: 2% 5%;
   background-color: rgba(35, 91, 45, 0.2);
+  border-radius: 0.5rem;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .frontEnd {
+    font-size: 1.6rem;
+  }
 }
 body .teamContainer .frontEnd .person {
-  border: 2px solid black;
+  border: 0.2rem solid black;
   margin: 2%;
   text-align: center;
 }
@@ -500,8 +534,19 @@ body .teamContainer .frontEnd .person .text-container {
 body .teamContainer .frontEnd .person .text-container h3 {
   font-size: 2rem;
 }
+@media ( max-width: 500px )  {
+  body .teamContainer .frontEnd .person .text-container h3 {
+    font-size: 1.6rem;
+  }
+}
 body .teamContainer .frontEnd .person .text-container h4 {
   font-size: 1.6rem;
+  margin: 1rem 0 0 0;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .frontEnd .person .text-container h4 {
+    font-size: 1.3rem;
+  }
 }
 body .teamContainer .backend {
   display: flex;
@@ -510,9 +555,15 @@ body .teamContainer .backend {
   justify-content: space-evenly;
   margin: 2% 5%;
   background-color: rgba(35, 91, 45, 0.2);
+  border-radius: 0.5rem;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .backend {
+    font-size: 1.6rem;
+  }
 }
 body .teamContainer .backend .person {
-  border: 2px solid black;
+  border: 0.2rem solid black;
   margin: 2%;
   text-align: center;
 }
@@ -531,8 +582,19 @@ body .teamContainer .backend .person .text-container {
 body .teamContainer .backend .person .text-container h3 {
   font-size: 2rem;
 }
+@media ( max-width: 500px )  {
+  body .teamContainer .backend .person .text-container h3 {
+    font-size: 1.6rem;
+  }
+}
 body .teamContainer .backend .person .text-container h4 {
   font-size: 1.6rem;
+  margin: 1rem 0 0 0;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .backend .person .text-container h4 {
+    font-size: 1.3rem;
+  }
 }
 body .teamContainer .iOS {
   display: flex;
@@ -541,9 +603,15 @@ body .teamContainer .iOS {
   justify-content: space-evenly;
   margin: 2% 5%;
   background-color: rgba(35, 91, 45, 0.2);
+  border-radius: 0.5rem;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .iOS {
+    font-size: 1.6rem;
+  }
 }
 body .teamContainer .iOS .person {
-  border: 2px solid black;
+  border: 0.2rem solid black;
   margin: 2%;
   text-align: center;
 }
@@ -562,8 +630,19 @@ body .teamContainer .iOS .person .text-container {
 body .teamContainer .iOS .person .text-container h3 {
   font-size: 2rem;
 }
+@media ( max-width: 500px )  {
+  body .teamContainer .iOS .person .text-container h3 {
+    font-size: 1.6rem;
+  }
+}
 body .teamContainer .iOS .person .text-container h4 {
   font-size: 1.6rem;
+  margin: 1rem 0 0 0;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .iOS .person .text-container h4 {
+    font-size: 1.3rem;
+  }
 }
 body .teamContainer .pm {
   display: flex;
@@ -572,9 +651,15 @@ body .teamContainer .pm {
   justify-content: space-evenly;
   margin: 2% 5%;
   background-color: rgba(35, 91, 45, 0.2);
+  border-radius: 0.5rem;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .pm {
+    font-size: 1.6rem;
+  }
 }
 body .teamContainer .pm .person {
-  border: 2px solid black;
+  border: 0.2rem solid black;
   margin: 2%;
   text-align: center;
 }
@@ -593,6 +678,17 @@ body .teamContainer .pm .person .text-container {
 body .teamContainer .pm .person .text-container h3 {
   font-size: 2rem;
 }
+@media ( max-width: 500px )  {
+  body .teamContainer .pm .person .text-container h3 {
+    font-size: 1.6rem;
+  }
+}
 body .teamContainer .pm .person .text-container h4 {
   font-size: 1.6rem;
+  margin: 1rem 0 0 0;
+}
+@media ( max-width: 500px )  {
+  body .teamContainer .pm .person .text-container h4 {
+    font-size: 1.3rem;
+  }
 }

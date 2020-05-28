@@ -34,15 +34,24 @@
 .about-title-style(@bg-color: fade(#2D6476,60%), @margins: 5% 5% 0 5%){
     .title{
         text-align: center;
-        margin: 5% 5% 0 5%;
+        margin: 2% 5% 0 5%;
         border: 2px solid black;
-        padding: 2% 0;
+        padding: 1% 0;
         font-family:'Nunito', sans-serif;
         border-radius: 1rem;
         background-color: @bg-color;
 
+        @media @mobile {
+            margin: 3% 5% 0 5%;
+        }
+
         h2{
             color: @white;
+
+            @media @mobile {
+                font-size: 2rem;
+                margin-top: 2%;
+            }
         }
     }
 }
@@ -54,6 +63,12 @@
     justify-content: space-evenly;
     margin: @margin-lr;  
     background-color: @bg-color;
+    border-radius: .5rem;
+
+    @media @mobile {
+        font-size: 1.6rem;
+    }
+
 }
 
 .person-style(@border-style:.2rem solid black, @margin-size:2%){
@@ -77,10 +92,19 @@
 
         h3{
             font-size: 2rem;
+           
+            @media @mobile {
+                font-size: 1.6rem;
+            }
         }
 
         h4{
             font-size: 1.6rem;
+            margin: 1rem 0 0 0;
+
+            @media @mobile {
+                font-size: 1.3rem;
+            }
        }
     }
 }
