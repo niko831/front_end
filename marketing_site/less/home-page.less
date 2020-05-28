@@ -10,7 +10,6 @@ body {
             font-size: 2.4rem;
             font-family: 'Nunito', sans-serif;
             margin: 1% 20% 0 37%;
-            //border: 1px solid blue;
             width: 30%;
 
             @media @mobile {
@@ -22,18 +21,19 @@ body {
 
             p {
                 margin-top: 3%;
+                text-align: center;
             }
         }
     }
 
     .btn {
-        .button-Padding(2rem 0 0 0);
+        .button-Padding(1rem 0 0 0);
 
         @media @mobile {
             .button-Padding(2rem 0 0 0);
         }
 
-        .button(@everglade, @white, 1rem 7rem, 1rem 6rem);
+        .button(@everglade, @white, 1rem 7rem);
     }
 
     .btn-mobile {
@@ -45,7 +45,7 @@ body {
             .button-Padding(2rem 0 0 0);
         }
 
-        .button(@white, black)
+        .button(@white, black, 1rem 7rem)
     }
 
 }
