@@ -1,0 +1,370 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  font-family: 'Libre Baskerville', serif;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background: white;
+}
+nav h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 3rem;
+  width: 20%;
+  padding: 0.5%;
+}
+@media (max-width: 600px) {
+  nav h1 {
+    font-size: 1.5rem;
+    width: 40%;
+  }
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+  padding-right: 0.5%;
+}
+@media (max-width: 600px) {
+  nav ul {
+    width: 35%;
+  }
+}
+nav ul a {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+@media (max-width: 600px) {
+  nav ul a {
+    font-size: 1rem;
+    padding-bottom: 4%;
+  }
+}
+#cta {
+  background-image: url(/img/landingbg3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 12% 0 25.3% 0;
+}
+#cta h1 {
+  font-size: 5vh;
+  font-family: 'Libre Baskerville', serif;
+  width: 30%;
+  margin-left: 57%;
+  color: white;
+}
+@media (max-width: 600px) {
+  #cta h1 {
+    text-align: center;
+    margin-left: 22%;
+    width: 60%;
+  }
+}
+#cta #button {
+  margin: 2.5% 0 0 64.5%;
+  padding: 1% 4% 1% 4%;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border-style: none;
+}
+@media (max-width: 600px) {
+  #cta #button {
+    margin: 7% 0 0 41%;
+    font-size: 1.2rem;
+  }
+}
+#about {
+  background-image: url(/img/test2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#about #aboutUs {
+  background: white;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 3%;
+}
+#about #aboutUs nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 70%;
+  border-bottom: solid lightgray 1px;
+}
+#about #aboutUs nav h1 {
+  width: 27%;
+}
+@media (max-width: 600px) {
+  #about #aboutUs nav h1 {
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  #about #aboutUs nav h1 {
+    font-size: 1.3rem;
+  }
+}
+#about #aboutUs nav ul {
+  width: 25%;
+}
+@media (max-width: 600px) {
+  #about #aboutUs nav ul {
+    width: 35%;
+  }
+}
+@media (max-width: 600px) {
+  #about #aboutUs nav ul a {
+    font-size: 0.8rem;
+  }
+}
+#about #aboutUs img {
+  border-radius: 4px;
+  padding-bottom: 3%;
+  width: 80%;
+}
+#about #aboutUs h3 {
+  font-size: 1.5rem;
+  padding-bottom: 2%;
+}
+@media (max-width: 600px) {
+  #about #aboutUs h3 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  #about #aboutUs p {
+    font-size: 1rem;
+  }
+}
+#about #aboutUs #title {
+  font-size: 4vh;
+  text-align: center;
+  padding: 10% 0 5% 0;
+}
+@media (max-width: 600px) {
+  #about #aboutUs #title {
+    font-size: 2rem;
+    padding: 20% 0 5% 0;
+  }
+}
+#about #aboutUs h2 {
+  font-size: 4vh;
+  padding: 3%;
+}
+@media (max-width: 600px) {
+  #about #aboutUs h2 {
+    font-size: 1.5rem;
+    margin-top: 7%;
+  }
+}
+#about #aboutUs #leads {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  #about #aboutUs #leads {
+    flex-direction: column;
+  }
+}
+#about #aboutUs #leads .boxes {
+  padding: 0 5%;
+}
+#about #aboutUs #leads .boxes #leads .boxes img {
+  border-radius: 4px;
+  padding-bottom: 3%;
+  width: 80%;
+}
+#about #aboutUs #frontEnd {
+  display: flex;
+}
+@media (max-width: 600px) {
+  #about #aboutUs #frontEnd {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#about #aboutUs #frontEnd .boxes {
+  width: 30%;
+}
+@media (max-width: 600px) {
+  #about #aboutUs #frontEnd .boxes {
+    width: 85%;
+    padding-bottom: 4%;
+  }
+}
+#about #aboutUs #frontEnd .boxes img {
+  width: 80%;
+}
+#about #aboutUs #iOS {
+  display: flex;
+}
+@media (max-width: 600px) {
+  #about #aboutUs #iOS {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#about #aboutUs #iOS .boxes {
+  width: 30%;
+}
+@media (max-width: 600px) {
+  #about #aboutUs #iOS .boxes {
+    width: 85%;
+    padding-bottom: 4%;
+  }
+}
+#about #aboutUs #iOS .boxes img {
+  width: 80%;
+}
+#about #aboutUs #topSide {
+  display: flex;
+  margin: 0 auto;
+}
+#about #aboutUs #topSide img {
+  width: 30%;
+}
+#about #aboutUs #topSide #mission {
+  padding-top: 12%;
+  margin: 0 3%;
+}
+#about #aboutUs #topSide #mission h2 {
+  font-size: 2rem;
+}
+#about #aboutUs #topSide #mission p {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
