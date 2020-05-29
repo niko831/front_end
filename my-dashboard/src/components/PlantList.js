@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import EditPlant from '../components/EditPlant';
 
 import '../App.css'
 
@@ -7,7 +8,10 @@ import { UserContext } from '../contexts/UserContext';
 
 const PlantList = (props) => {
 
-    const user_id = window.localStorage.getItem('id')
+    // const value = window.localStorage.getItem('id')
+      const value = React.useContext(UserContext)
+
+
 
     const [plantList, setPlantList] = useState([{
         nickname: '',
@@ -16,10 +20,17 @@ const PlantList = (props) => {
         id: ''
     }]);
 
+    const [editPlant, setEditPlant] = useState({
+        nickname: '',
+        species: '',
+        h2o_frequency: '',
+        id: ''
+      });
+
 
     useEffect( () => {
         const fetchPlants = () => {
-            axiosWithAuth().get(`/api/users/${user_id}/plants`)
+            axiosWithAuth().get(`/api/users/${value}/plants`)
                            .then( res => {
                                console.log('Successful GET request for PlantList', res)
                                setPlantList(res.data)
@@ -37,7 +48,7 @@ const PlantList = (props) => {
 
 
   const updatePlants = () => {
-    axiosWithAuth().get(`/api/users/${user_id}/plants`)
+    axiosWithAuth().get(`/api/users/${value}/plants`)
                    .then( res => {
                        console.log('Successful GET request for PlantList', res)
                        setPlantList(res.data)
@@ -65,6 +76,35 @@ const PlantList = (props) => {
 
     }
 
+    const editMyPlant = (e, id) => {
+        e.preventDefault();
+        axiosWithAuth()
+          .put(`/api/plants/${id}`, {
+            nickname: editPlant.nickname,
+            species: editPlant.species,
+            h2o_frequency: editPlant.h2o_frequency,
+          })
+          .then(() => {
+            console.log('Edit successfull');
+            setEditPlant({
+                nickname: '',
+                species: '',
+                h2o_frequency: ''
+            });
+            updatePlants();
+          })
+          .catch( err => {
+              console.log('PUT request failed', err)
+          })
+          
+     }
+    
+      const changeHandler = e => {
+        setEditPlant({
+            ...editPlant,
+            [e.target.name]: e.target.value
+          });
+      }
 
     return (
         <div className="plantList">
@@ -76,6 +116,33 @@ const PlantList = (props) => {
                 <h3>Species: {plant.species}</h3>
                 <h3>Water Frequency: {plant.h2o_frequency}</h3>
                 <button onClick={() => deletePlant(plant.id)}>Delete</button>
+                {/* <button onClick={}>Edit Plant</button> */}
+                <div className='hideEdit'>
+        <form onSubmit={e => editMyPlant(e, plant.id)} id="userForm">
+          <input
+            type="text"
+            placeholder="Nickname"
+            name="nickname"
+            value={editPlant.nickname}
+            onChange={changeHandler}
+          />
+          <input
+            type="text"
+            placeholder="Species"
+            name="species"
+            value={editPlant.species}
+            onChange={changeHandler}
+          />
+                    <input
+            type="text"
+            placeholder="Water Frequency"
+            name="h2o_frequency"
+            value={editPlant.h2o_frequency}
+            onChange={changeHandler}
+          />
+          <button type="submit">Submit Changes</button>
+        </form>
+        </div>
                 </div>
                 )
             })}
