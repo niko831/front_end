@@ -41,6 +41,7 @@ const NewPlant = (props) => {
     return (
         <div className='newPlant'>
             <h4>Add a New Plant</h4>
+            <p id='plantJourney'>Start your plant's journey here...</p>
             <form onSubmit={addNewPlant}>
                 <label>
                 <p>Plant Name</p>

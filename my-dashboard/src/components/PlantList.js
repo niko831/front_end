@@ -112,11 +112,9 @@ const PlantList = (props) => {
 
                 return (
                 <div className="displayedPlant" key={plant.id}>
-                <h2>Nickname: {plant.nickname}</h2>
-                <h3>Species: {plant.species}</h3>
-                <h3>Water Frequency: {plant.h2o_frequency}</h3>
-                <button onClick={() => deletePlant(plant.id)}>Delete</button>
-                {/* <button onClick={}>Edit Plant</button> */}
+                <h2><span>{plant.nickname}</span></h2>
+                <h3>Species: <span>{plant.species}</span></h3>
+                <h3>Water Frequency: <span>{plant.h2o_frequency}</span></h3>
                 <div className='hideEdit'>
         <form onSubmit={e => editMyPlant(e, plant.id)} id="userForm">
           <input
@@ -142,6 +140,7 @@ const PlantList = (props) => {
           />
           <button type="submit">Submit Changes</button>
         </form>
+        <button onClick={() => deletePlant(plant.id)}>Delete</button>
         </div>
                 </div>
                 )

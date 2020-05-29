@@ -81,13 +81,66 @@ h2 {
 
 .dashboardComponents {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: left;
+  width: 100%;
 }
 
 
 .newPlant {
-  background: #F2F3F2;
+  background: #235B2D;
+  padding: 2%;
+  position: fixed;
+  right: 0px;
+  top: 120px;
+  color: #8de450;
+  text-align: left;
+}
+
+.newPlant h4 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.newPlant p {
+  font-weight: 700;
+  margin-bottom: 1%;
+  font-size: 1.5rem;
+}
+
+.newPlant input {
+  margin-bottom: 0;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.newPlant button {
+  margin-top: 10%;
+  width: 50%;
   padding: 3%;
+  color: #23515b;
+  font-weight: 700;
+  font-size: 2rem;
+  background: #8de450;
+  border: none;
+  border-radius: 15px;
+}
+
+#plantJourney {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 3%;
+  text-align: left;
+  color: white;
+  font-weight: 400;
+}
+
+
+.newPlant form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .userCard {
@@ -114,14 +167,34 @@ h2 {
 .plantList {
   background: none;
   display: flex;
-  flex-wrap: nowrap;
-  width: 30%;
-  padding: 5%;
+  flex-wrap: wrap;
+  width: 60%;
 }
 
 .displayedPlant {
-  border: 2px solid green;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: left;
   margin: 5%;
-  background: white;
-  box-shadow: 3px 3px 5px 6px rgb(92, 90, 90);
+  padding: 3%;
+  background: #23515b;
+  color: white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.displayedPlant h2 {
+  font-size: 2rem;
+  margin: 4%;
+}
+
+.displayedPlant h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 2%;
+}
+
+.displayedPlant span {
+  color: #8de450;
 }
