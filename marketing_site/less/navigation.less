@@ -4,6 +4,7 @@ header {
 
         img {
             width: 100%;
+            max-height: 60rem;
 
             @media @mobile {
                 height: 40rem;
@@ -16,7 +17,6 @@ header {
     .nav-title {
         display: flex;
         justify-content: space-between;
-        //border: 1px solid red;
         background-color: fade(grey, 50%);
         text-align: center;
         position: absolute;
@@ -45,7 +45,7 @@ header {
         .navigation {
             font-family: 'Nunito', sans-serif;
             font-weight: 600;
-            margin-top: 1%;
+            margin-top: .7%;
 
             @media @mobile {
                 margin: 2% 0 0 2%;
@@ -75,7 +75,7 @@ header {
         .login {
             font-family: 'Nunito', sans-serif;
             font-weight: 600;
-            margin-top: 1%;
+            margin-top: .7%;
 
             a {
                 text-decoration: none;
@@ -139,76 +139,83 @@ header {
 
 //-----------------------------------------------------------------------About Page Navigation--------------------------------------------------------------------------------------------
 header {
-    .nav-title-about{
+    .nav-title-about {
         display: flex;
         justify-content: space-between;
-        //border: 1px solid red;
-        background-color: fade(@everglade,80%);
+        background-color: fade(@everglade, 80%);
         text-align: center;
         width: 100%;
 
-        @media @mobile{
+        @media @mobile {
             align-content: center;
         }
 
-        h1{
+        h1 {
             padding: .5rem 0;
             color: @nav-color;
             margin-left: 3rem;
 
-            @media @mobile{
-                font-size: 2.5rem ;
+            @media @mobile {
+                font-size: 2.5rem;
                 margin: 0 4%;
             }
-        }//ends h1
+        }
 
-        .navigation{
+        //ends h1
+
+        .navigation {
             font-family: 'Nunito', sans-serif;
             font-weight: 600;
-            margin-top: 1%;
+            margin-top: .7%;
 
-            @media @mobile{
+            @media @mobile {
                 margin: 2% 0 0 5%;
                 width: 40%;
             }
 
-            a{
-                text-decoration: none; 
-                margin: 0 3rem;
-                font-size: 2rem;
-                color: @nav-color;
-                
-                &:hover {
-                    color: lighten(@everglade, 20%);
-                }
-
-                @media @mobile{
-                margin: 0 4%;
-                text-align: center;
-                font-size: 1.6rem;
-                }
-            }
-        }//end navigation
-
-        .login{
-            font-family: 'Nunito', sans-serif;
-            font-weight: 600;
-            margin-top: 1%;
-
-            a{
+            a {
                 text-decoration: none;
                 margin: 0 3rem;
                 font-size: 2rem;
                 color: @nav-color;
-                
+
+                &:hover {
+                    color: lighten(@everglade, 20%);
+                }
+
+                @media @mobile {
+                    margin: 0 4%;
+                    text-align: center;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        //end navigation
+
+        .login {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            margin-top: .7%;
+
+            a {
+                text-decoration: none;
+                margin: 0 3rem;
+                font-size: 2rem;
+                color: @nav-color;
+
                 &:hover {
                     color: lighten(@everglade, 30%);
                 }
-                
-                @media @mobile{
+
+                @media @mobile {
                     display: none;
                 }
             }
-        }//ends login
-    }// ends nav-title
+        }
+
+        //ends login
+    }
+
+    // ends nav-title
 }

@@ -144,7 +144,7 @@ h5 {
   font-family: 'Nunito', sans-serif;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 h2 {
   font-size: 3.2rem;
@@ -170,6 +170,7 @@ img {
 }
 header .img-container img {
   width: 100%;
+  max-height: 60rem;
 }
 @media ( max-width: 500px )  {
   header .img-container img {
@@ -206,7 +207,7 @@ header .nav-title h1 {
 header .nav-title .navigation {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  margin-top: 1%;
+  margin-top: 0.7%;
 }
 @media ( max-width: 500px )  {
   header .nav-title .navigation {
@@ -233,7 +234,7 @@ header .nav-title .navigation a:hover {
 header .nav-title .login {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  margin-top: 1%;
+  margin-top: 0.7%;
 }
 header .nav-title .login a {
   text-decoration: none;
@@ -308,7 +309,7 @@ header .nav-title-about h1 {
 header .nav-title-about .navigation {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  margin-top: 1%;
+  margin-top: 0.7%;
 }
 @media ( max-width: 500px )  {
   header .nav-title-about .navigation {
@@ -335,7 +336,7 @@ header .nav-title-about .navigation a:hover {
 header .nav-title-about .login {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  margin-top: 1%;
+  margin-top: 0.7%;
 }
 header .nav-title-about .login a {
   text-decoration: none;
@@ -355,25 +356,31 @@ body .content-section .content {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 5rem;
   font-size: 2.4rem;
   font-family: 'Nunito', sans-serif;
-  margin: 1% 20% 0 37%;
+  margin: 2% 20% 0 37%;
   width: 30%;
 }
 @media ( max-width: 500px )  {
   body .content-section .content {
-    margin: 9% 0rem 0 3rem;
+    margin: 3% 0rem 0 2rem;
     width: 90%;
     display: block;
   }
 }
 body .content-section .content p {
   margin-top: 3%;
+  text-align: center;
+  font-size: 2.2rem;
+}
+@media ( max-width: 500px )  {
+  body .content-section .content p {
+    font-size: 1.7rem;
+  }
 }
 body .btn {
   text-align: center;
-  padding: 2rem 0 0 0;
+  padding: 1rem 0 0 0;
 }
 @media ( max-width: 500px )  {
   body .btn {
@@ -389,7 +396,6 @@ body .btn button {
   color: white;
   font-size: 1.8rem;
   text-align: center;
-  padding-top: 2rem;
 }
 @media ( max-width: 500px )  {
   body .btn button {
@@ -418,12 +424,11 @@ body .btn-mobile button {
   color: black;
   font-size: 1.8rem;
   text-align: center;
-  padding-top: 2rem;
 }
 @media ( max-width: 500px )  {
   body .btn-mobile button {
     width: 70%;
-    padding: 1rem 7rem;
+    padding: 1rem 6rem;
   }
 }
 body .btn-mobile button:hover {
@@ -452,54 +457,6 @@ body .teamContainer .title h2 {
     margin-top: 2%;
   }
 }
-body .teamContainer .marketing {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 2% 5%;
-  background-color: rgba(35, 91, 45, 0.2);
-  border-radius: 0.5rem;
-}
-@media ( max-width: 500px )  {
-  body .teamContainer .marketing {
-    font-size: 1.6rem;
-  }
-}
-body .teamContainer .marketing .person {
-  border: 0.2rem solid black;
-  margin: 2%;
-  text-align: center;
-}
-body .teamContainer .marketing .person img {
-  width: 40rem;
-}
-@media ( max-width: 500px )  {
-  body .teamContainer .marketing .person img {
-    width: 20rem;
-    height: auto;
-  }
-}
-body .teamContainer .marketing .person .text-container {
-  margin: 1rem 0;
-}
-body .teamContainer .marketing .person .text-container h3 {
-  font-size: 2rem;
-}
-@media ( max-width: 500px )  {
-  body .teamContainer .marketing .person .text-container h3 {
-    font-size: 1.6rem;
-  }
-}
-body .teamContainer .marketing .person .text-container h4 {
-  font-size: 1.6rem;
-  margin: 1rem 0 0 0;
-}
-@media ( max-width: 500px )  {
-  body .teamContainer .marketing .person .text-container h4 {
-    font-size: 1.3rem;
-  }
-}
 body .teamContainer .frontEnd {
   display: flex;
   flex-direction: row;
@@ -520,11 +477,11 @@ body .teamContainer .frontEnd .person {
   text-align: center;
 }
 body .teamContainer .frontEnd .person img {
-  width: 300px;
+  width: 40rem;
 }
 @media ( max-width: 500px )  {
   body .teamContainer .frontEnd .person img {
-    width: 200px;
+    width: 20rem;
     height: auto;
   }
 }
@@ -568,11 +525,11 @@ body .teamContainer .backend .person {
   text-align: center;
 }
 body .teamContainer .backend .person img {
-  width: 300px;
+  width: 40rem;
 }
 @media ( max-width: 500px )  {
   body .teamContainer .backend .person img {
-    width: 200px;
+    width: 20rem;
     height: auto;
   }
 }
@@ -616,11 +573,11 @@ body .teamContainer .iOS .person {
   text-align: center;
 }
 body .teamContainer .iOS .person img {
-  width: 300px;
+  width: 40rem;
 }
 @media ( max-width: 500px )  {
   body .teamContainer .iOS .person img {
-    width: 200px;
+    width: 20rem;
     height: auto;
   }
 }
@@ -664,11 +621,11 @@ body .teamContainer .pl .person {
   text-align: center;
 }
 body .teamContainer .pl .person img {
-  width: 300px;
+  width: 40rem;
 }
 @media ( max-width: 500px )  {
   body .teamContainer .pl .person img {
-    width: 200px;
+    width: 20rem;
     height: auto;
   }
 }

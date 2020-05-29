@@ -1,20 +1,17 @@
 body {
     .content-section {
 
-
         .content {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            margin-top: 5rem;
             font-size: 2.4rem;
             font-family: 'Nunito', sans-serif;
-            margin: 1% 20% 0 37%;
-            //border: 1px solid blue;
+            margin: 2% 20% 0 37%;
             width: 30%;
 
             @media @mobile {
-                margin: 9% 0rem 0 3rem;
+                margin: 3% 0rem 0 2rem;
                 width: 90%;
                 display: block;
             }
@@ -22,12 +19,18 @@ body {
 
             p {
                 margin-top: 3%;
+                text-align: center;
+                font-size: 2.2rem;
+
+                @media @mobile {
+                    font-size: 1.7rem;
+                }
             }
         }
     }
 
     .btn {
-        .button-Padding(2rem 0 0 0);
+        .button-Padding(1rem 0 0 0);
 
         @media @mobile {
             .button-Padding(2rem 0 0 0);
@@ -45,7 +48,7 @@ body {
             .button-Padding(2rem 0 0 0);
         }
 
-        .button(@white, black)
+        .button(@white, black, 1rem 7rem, 1rem 6rem);
     }
 
 }
