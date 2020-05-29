@@ -25,7 +25,7 @@ const UserCard = (props) => {
                        })
     }
 
-    const user_id = useContext(UserContext)
+    const { user_id } = useContext(UserContext)
 
     const [user, setUser] = useState({
         id:'',
@@ -58,7 +58,7 @@ const UserCard = (props) => {
       const handleDelete = e => {
         e.preventDefault();
 
-        axiosWithAuth().get(`/api/users/${user_id}`)
+        axiosWithAuth().delete(`/api/users/${user_id}`)
                        .then( res => {
                            console.log('Successfully deleted', res)
                            localStorage.clear('token')
