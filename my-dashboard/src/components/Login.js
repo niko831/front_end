@@ -77,12 +77,13 @@ const onInputChange = evt => {
     .then(response => {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('id', response.data.id);
+        localStorage.setItem('welcome', response.data.welcome);
         console.log(response);
-        debugger
+        // debugger
         props.history.push("/dashboard")
     })
     .catch(err => {
-        debugger
+        // debugger
         console.log(err)
     })
 }

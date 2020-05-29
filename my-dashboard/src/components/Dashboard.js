@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import PlantList from './PlantList';
 import NewPlant from './NewPlant';
 import UserCard from './UserCard';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import { UserContext } from '../contexts/UserContext';
+import moment from 'moment';
 
 
 const Dashboard = (props) => {
 
+    //CONTEXT
+    const {user_id, welcome, plantList, setPlantList} = useContext(UserContext);
+
+
+    useEffect( () => {
+        const fetchPlants = () => {
+            axiosWithAuth().get(`/api/users/${user_id}/plants`)
+                           .then( res => {
+                               console.log('Successful GET request for PlantList', res)
+                               setPlantList(res.data)
+                           })
+                           .catch( err => {
+                               console.log('Error GET request for PlantList', err)
+                           })
+        }
+        fetchPlants()
+    }, [setPlantList])
 
     const handleLogout = e => {
         e.preventDefault();
@@ -39,7 +58,10 @@ const Dashboard = (props) => {
                 </a>
                 </div>
             </nav>
-            <h2>Water My Plants</h2>
+            <div className='welcomeWords'>
+            <h2>Welcome back, {welcome}!</h2>
+            <h3>{moment().format("[Today is] dddd, MMMM Do YYYY")}</h3>
+            </div>
             <div className="dashboardComponents">
             <PlantList />
             <NewPlant />

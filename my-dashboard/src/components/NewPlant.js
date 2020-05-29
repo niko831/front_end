@@ -4,7 +4,14 @@ import { UserContext } from '../contexts/UserContext';
 
 const NewPlant = (props) => {
 
-    const user_id = window.localStorage.getItem('id')
+    const {user_id} = window.localStorage.getItem('id')
+
+    const [plantList, setPlantList] = useState([{
+        nickname: '',
+        species: '',
+        h2o_frequency: '',
+        id: ''
+    }]);
 
 
     const [plant, setPlant] = useState({
@@ -25,6 +32,14 @@ const NewPlant = (props) => {
         })
         .then( res => {
             console.log('New Plant POST Success', res)
+            axiosWithAuth().get(`/api/users/${user_id}/plants`)
+                           .then( res => {
+                               console.log('Successful GET request for PlantList', res)
+                               setPlantList(res.data)
+                           })
+                           .catch( err => {
+                               console.log('Error GET request for PlantList', err)
+                           })
                        
         })
         .catch (err => console.log('Error POST for add new plant', err))
@@ -41,6 +56,7 @@ const NewPlant = (props) => {
     return (
         <div className='newPlant'>
             <h4>Add a New Plant</h4>
+            <p id='plantJourney'>Start your plant's journey here...</p>
             <form onSubmit={addNewPlant}>
                 <label>
                 <p>Plant Name</p>

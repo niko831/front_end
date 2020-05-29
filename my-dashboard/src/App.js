@@ -15,7 +15,9 @@ function App() {
 
   // CONTEXT STATE
 
-  const user_id = window.localStorage.getItem('id')
+  const user_id = window.localStorage.getItem('id');
+
+  const welcome = window.localStorage.getItem('welcome');
 
   const [userState, setUserState] = useState({
     username: '',
@@ -33,7 +35,7 @@ function App() {
   return (
 
     <Router>
-    <UserContext.Provider  value={user_id} userState={userState} setUserState={setUserState}>
+    <UserContext.Provider  value={{user_id, welcome, plantList, setPlantList}} >
     <div className="App">
       <Route exact path='/' component={Signup}/>
       <Route exact path='/login' component={Login}/>

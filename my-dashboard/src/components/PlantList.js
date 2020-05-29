@@ -9,16 +9,16 @@ import { UserContext } from '../contexts/UserContext';
 const PlantList = (props) => {
 
     // const value = window.localStorage.getItem('id')
-      const value = React.useContext(UserContext)
+      const {user_id, plantList, setPlantList} = React.useContext(UserContext)
 
 
 
-    const [plantList, setPlantList] = useState([{
-        nickname: '',
-        species: '',
-        h2o_frequency: '',
-        id: ''
-    }]);
+    // const [plantList, setPlantList] = useState([{
+    //     nickname: '',
+    //     species: '',
+    //     h2o_frequency: '',
+    //     id: ''
+    // }]);
 
     const [editPlant, setEditPlant] = useState({
         nickname: '',
@@ -30,7 +30,7 @@ const PlantList = (props) => {
 
     useEffect( () => {
         const fetchPlants = () => {
-            axiosWithAuth().get(`/api/users/${value}/plants`)
+            axiosWithAuth().get(`/api/users/${user_id}/plants`)
                            .then( res => {
                                console.log('Successful GET request for PlantList', res)
                                setPlantList(res.data)
@@ -48,7 +48,7 @@ const PlantList = (props) => {
 
 
   const updatePlants = () => {
-    axiosWithAuth().get(`/api/users/${value}/plants`)
+    axiosWithAuth().get(`/api/users/${user_id}/plants`)
                    .then( res => {
                        console.log('Successful GET request for PlantList', res)
                        setPlantList(res.data)
@@ -106,17 +106,16 @@ const PlantList = (props) => {
           });
       }
 
+
     return (
         <div className="plantList">
         {plantList.map((plant)=> {
 
                 return (
                 <div className="displayedPlant" key={plant.id}>
-                <h2>Nickname: {plant.nickname}</h2>
-                <h3>Species: {plant.species}</h3>
-                <h3>Water Frequency: {plant.h2o_frequency}</h3>
-                <button onClick={() => deletePlant(plant.id)}>Delete</button>
-                {/* <button onClick={}>Edit Plant</button> */}
+                <h2><span>{plant.nickname}</span></h2>
+                <h3>Species <span>{plant.species}</span></h3>
+                <h3>Water Frequency <span>{plant.h2o_frequency}</span></h3>
                 <div className='hideEdit'>
         <form onSubmit={e => editMyPlant(e, plant.id)} id="userForm">
           <input
@@ -142,8 +141,9 @@ const PlantList = (props) => {
           />
           <button type="submit">Submit Changes</button>
         </form>
+        <button id='deleteButton' onClick={() => deletePlant(plant.id)}>Delete</button>
         </div>
-                </div>
+        </div>
                 )
             })}
         </div>

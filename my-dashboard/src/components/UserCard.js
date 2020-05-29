@@ -73,25 +73,33 @@ const UserCard = (props) => {
     return (
         <div className='userCard'>
         <a href='/dashboard' aria-label='Close User Info Modal Box'>×</a>
-        <form onSubmit={editUser} id="userForm">
+        <form onSubmit={editUser} className="userForm">
+          <label>
+          <h3>Change Username</h3>
           <input
+            className='userInput'
             type="text"
-            placeholder="Username"
+            placeholder="Change Username"
             name="username"
             value={user.username}
             onChange={changeHandler}
           />
+          </label>
+          <label>
+            <h3>Change Phone Number</h3>
           <input
+            className='userInput'
             type="text"
             placeholder="New Number"
             name="phone_number"
             value={user.phone_number}
             onChange={changeHandler}
           />
+          </label>
           <button type="submit">Save Changes</button>
         </form>
-        <button onClick={handleLogout}>LOG OUT</button>
-        <button onClick={handleDelete}>Danger: Delete Account</button>
+        <button id='logout' onClick={handleLogout}>LOG OUT</button>
+        <button id='delete' onClick={handleDelete}>Danger: Delete Account</button>
         </div>
     )
 }
