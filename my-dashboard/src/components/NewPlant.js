@@ -4,14 +4,16 @@ import { UserContext } from '../contexts/UserContext';
 
 const NewPlant = (props) => {
 
-    const {user_id} = window.localStorage.getItem('id')
+    // const {user_id} = window.localStorage.getItem('id')
 
-    const [plantList, setPlantList] = useState([{
-        nickname: '',
-        species: '',
-        h2o_frequency: '',
-        id: ''
-    }]);
+    const {user_id, welcome, plantList, setPlantList} = useContext(UserContext);
+
+    // const [plantList, setPlantList] = useState([{
+    //     nickname: '',
+    //     species: '',
+    //     h2o_frequency: '',
+    //     id: ''
+    // }]);
 
 
     const [plant, setPlant] = useState({
@@ -36,6 +38,7 @@ const NewPlant = (props) => {
                            .then( res => {
                                console.log('Successful GET request for PlantList', res)
                                setPlantList(res.data)
+                            //    alert('Success!')
                            })
                            .catch( err => {
                                console.log('Error GET request for PlantList', err)
