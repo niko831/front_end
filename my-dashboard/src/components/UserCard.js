@@ -55,10 +55,24 @@ const UserCard = (props) => {
           });
       }
 
+      const handleDelete = e => {
+        e.preventDefault();
+
+        axiosWithAuth().get(`/api/users/${user_id}`)
+                       .then( res => {
+                           console.log('Successfully deleted', res)
+                           localStorage.clear('token')
+                           localStorage.clear('id')
+                           props.history.push('/login')
+                       })
+                       .catch( err => {
+                           console.log('Error logging out', err)
+                       })
+    }
+
     return (
         <div className='userCard'>
         <a href='/dashboard' aria-label='Close User Info Modal Box'>×</a>
-        <button onClick={handleLogout}>LOG OUT</button>
         <form onSubmit={editUser} id="userForm">
           <input
             type="text"
@@ -76,6 +90,8 @@ const UserCard = (props) => {
           />
           <button type="submit">Save Changes</button>
         </form>
+        <button onClick={handleLogout}>LOG OUT</button>
+        <button onClick={handleDelete}>Danger: Delete Account</button>
         </div>
     )
 }
