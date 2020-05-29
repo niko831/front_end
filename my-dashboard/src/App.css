@@ -56,6 +56,19 @@ body {
   
 }
 
+.left-nav button {
+  margin: 0 3%;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: end;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .userIcon {
   margin-right: 2%;
   margin-top: 0.5%;
