@@ -109,8 +109,8 @@ function Signup(props) {
             <a href="/">Sign Up</a>
             <div className="info">
                 {/* Dummy Links */}
-                <a href="/">Home</a>
-                <a href="/">About</a>
+                <a href="https://watermyownplants.netlify.app/index.html">Home</a>
+                <a href="https://watermyownplants.netlify.app/about.html">About</a>
             </div>
         </header>
     </StyledDiv>
