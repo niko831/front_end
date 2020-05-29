@@ -9,68 +9,68 @@ import '../App.css'
 
 const EditPlant = () => {
 
-    const user_id = useContext(UserContext)
+    const value = React.useContext(UserContext)
 
-    const [user, setUser] = useState({
-        id:'',
-        username: '',
-        phone_number: ''
+    const plantId = React.useContext(UserContext)
+
+    const [editPlant, setEditPlant] = useState({
+        nickname: '',
+        species: '',
+        h2o_frequency: '',
+        id: ''
       });
 
 
-    const editUser = e => {
+    const editMyPlant = e => {
         e.preventDefault();
         axiosWithAuth()
-          .put(`/api/users/${user_id}`, {
-            username: user.username,
-            phone_number: user.phone_number
+          .put(`/api/plants/${plantId}`, {
+            username: editPlant.username,
+            species: editPlant.species,
+            h2o_frequency: editPlant.h2o_frequency,
           })
           .then(() => {
             console.log('Edit successfull');
-            alert(`Success! Username changed to ${user.username}`)
-            setUser('')
-          });
+            // setEditPlant('')
+          })
+          .catch( err => {
+              console.log('PUT request failed', err)
+          })
+          
      }
     
       const changeHandler = e => {
-        setUser({
-            ...user,
+        setEditPlant({
+            ...editPlant,
             [e.target.name]: e.target.value
           });
       }
 
     return (
-        <div className='userCard'>
-        <a href='/dashboard' aria-label='Close User Info Modal Box'>×</a>
-        <img src={Image} alt='Profile'/>
-        <form>
-        <label>
-            <p>Username</p>
-            <input type='text'/>
-        </label>
-        <label>
-            <p>Phone Number</p>
-            <input type='text'/>
-        </label>
-        <button>Save Changes</button>
-        </form>
-        <button>LOG OUT</button>
-        <form onSubmit={editUser} id="userForm">
+        <div className='hideEdit'>
+        <form onSubmit={editMyPlant} id="userForm">
           <input
             type="text"
-            placeholder="Username"
+            placeholder="Nickname"
             name="username"
-            value={user.username}
+            value={editPlant.username}
             onChange={changeHandler}
           />
           <input
             type="text"
-            placeholder="New Number"
-            name="phone_number"
-            value={user.phone_number}
+            placeholder="Species"
+            name="species"
+            value={editPlant.species}
             onChange={changeHandler}
           />
-          <button type="submit">Edit Username</button>
+                    <input
+            type="text"
+            placeholder="Water Frequency"
+            name="h2o_frequency"
+            value={editPlant.h2o_frequency}
+            onChange={changeHandler}
+          />
+          <button type="submit">Submit Changes</button>
         </form>
         </div>
     )
