@@ -35,7 +35,7 @@ function App() {
   return (
 
     <Router>
-    <UserContext.Provider  value={{user_id, welcome}} >
+    <UserContext.Provider  value={{user_id, welcome, plantList, setPlantList}} >
     <div className="App">
       <Route exact path='/' component={Signup}/>
       <Route exact path='/login' component={Login}/>

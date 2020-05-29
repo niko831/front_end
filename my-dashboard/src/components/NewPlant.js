@@ -6,6 +6,13 @@ const NewPlant = (props) => {
 
     const {user_id} = window.localStorage.getItem('id')
 
+    const [plantList, setPlantList] = useState([{
+        nickname: '',
+        species: '',
+        h2o_frequency: '',
+        id: ''
+    }]);
+
 
     const [plant, setPlant] = useState({
         nickname: '',
@@ -25,6 +32,14 @@ const NewPlant = (props) => {
         })
         .then( res => {
             console.log('New Plant POST Success', res)
+            axiosWithAuth().get(`/api/users/${user_id}/plants`)
+                           .then( res => {
+                               console.log('Successful GET request for PlantList', res)
+                               setPlantList(res.data)
+                           })
+                           .catch( err => {
+                               console.log('Error GET request for PlantList', err)
+                           })
                        
         })
         .catch (err => console.log('Error POST for add new plant', err))

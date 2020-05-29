@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import PlantList from './PlantList';
 import NewPlant from './NewPlant';
 import UserCard from './UserCard';
@@ -10,7 +10,22 @@ import moment from 'moment';
 const Dashboard = (props) => {
 
     //CONTEXT
-    const {welcome} = useContext(UserContext);
+    const {user_id, welcome, plantList, setPlantList} = useContext(UserContext);
+
+
+    useEffect( () => {
+        const fetchPlants = () => {
+            axiosWithAuth().get(`/api/users/${user_id}/plants`)
+                           .then( res => {
+                               console.log('Successful GET request for PlantList', res)
+                               setPlantList(res.data)
+                           })
+                           .catch( err => {
+                               console.log('Error GET request for PlantList', err)
+                           })
+        }
+        fetchPlants()
+    }, [setPlantList])
 
     const handleLogout = e => {
         e.preventDefault();

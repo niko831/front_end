@@ -9,16 +9,16 @@ import { UserContext } from '../contexts/UserContext';
 const PlantList = (props) => {
 
     // const value = window.localStorage.getItem('id')
-      const {user_id} = React.useContext(UserContext)
+      const {user_id, plantList, setPlantList} = React.useContext(UserContext)
 
 
 
-    const [plantList, setPlantList] = useState([{
-        nickname: '',
-        species: '',
-        h2o_frequency: '',
-        id: ''
-    }]);
+    // const [plantList, setPlantList] = useState([{
+    //     nickname: '',
+    //     species: '',
+    //     h2o_frequency: '',
+    //     id: ''
+    // }]);
 
     const [editPlant, setEditPlant] = useState({
         nickname: '',
