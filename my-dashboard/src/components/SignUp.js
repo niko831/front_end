@@ -91,7 +91,7 @@ function Signup(props) {
         .post("https://wmplants-db.herokuapp.com/api/auth/register/", newUser)
         .then(response =>{
             console.log(response)
-            props.history.push("/")
+            props.history.push("/login")
         })
         .catch(error =>{
             debugger
@@ -105,8 +105,8 @@ function Signup(props) {
     <StyledDiv>
         <header className="header-nav">
             <Link to="/"><h2>Water My Plants</h2></Link> 
-            <a href="/">Login</a>
-            <a href="/signup">Sign Up</a>
+            <a href="/login">Login</a>
+            <a href="/">Sign Up</a>
             <div className="info">
                 {/* Dummy Links */}
                 <a href="/">Home</a>
