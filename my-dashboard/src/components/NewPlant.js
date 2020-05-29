@@ -4,7 +4,7 @@ import { UserContext } from '../contexts/UserContext';
 
 const NewPlant = (props) => {
 
-    const user_id = window.localStorage.getItem('id')
+    const {user_id} = window.localStorage.getItem('id')
 
 
     const [plant, setPlant] = useState({

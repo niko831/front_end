@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
 body {
-  background: url('./assets/dashBackground.png');
+  background: #ffffff;
   background-size: cover;
 }
 
@@ -88,12 +88,12 @@ h2 {
 
 
 .newPlant {
-  background: #235B2D;
+  background: #F2F3F2;
   padding: 2%;
   position: fixed;
   right: 0px;
   top: 120px;
-  color: #8de450;
+  color: #235B2D;
   text-align: left;
 }
 
@@ -106,25 +106,27 @@ h2 {
   font-weight: 700;
   margin-bottom: 1%;
   font-size: 1.5rem;
+  color: #2D6476;
 }
 
 .newPlant input {
   margin-bottom: 0;
-  border-radius: 15px;
   border: none;
   font-size: 1.5rem;
+  background: #FFFFFF;
+  border-radius: 5px;
 }
 
 .newPlant button {
   margin-top: 10%;
   width: 50%;
   padding: 3%;
-  color: #23515b;
+  color: #ffffff;
   font-weight: 700;
   font-size: 2rem;
-  background: #8de450;
+  background: #235B2D;
   border: none;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 #plantJourney {
@@ -132,7 +134,7 @@ h2 {
   margin: 0;
   margin-bottom: 3%;
   text-align: left;
-  color: white;
+  color: #2D6476;
   font-weight: 400;
 }
 
@@ -150,6 +152,46 @@ h2 {
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
+  margin-left: 25%;
+  margin-top: 2%;
+
+  padding: 0 2% 2% 2%;
+}
+
+#userForm {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.userForm input {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border: none;
+  font-size: 1.5rem;
+  background: #FFFFFF;
+  border-radius: 5px;
+  margin-bottom: 4%;
+}
+
+.userInput {
+  background: white;
+  border: none;
+}
+
+.userCard a {
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0;
+  margin-left: 90%;
+  color: #235B2D;
 }
 
 .userCard img {
@@ -160,12 +202,68 @@ h2 {
   object-fit: cover;
 }
 
+.userCard h3 {
+  color: #2D6476;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
 .userCard form button {
-  display: inline-block;
+  margin-top: 10%;
+  width: 100%;
+  padding: 3%;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: #235B2D;
+  border: none;
+  border-radius: 5px;
+}
+
+.userCard form button:hover {
+  background: #813232;
+}
+
+.userCard form label input {
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
+#logout {
+  margin-top: 15%;
+  width: 100%;
+  padding: 3%;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: #C9CFCA;
+  border: none;
+  border-radius: 5px;
+}
+
+#logout:hover {
+  background: rgb(120, 121, 120)
+}
+
+#delete {
+  background: #d82f2f;
+  margin-top: 8%;
+  width: 100%;
+  padding: 3%;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+#delete:hover {
+  background: #ad2222;
 }
 
 .plantList {
-  background: none;
+  background: #C4C4C4;
   display: flex;
   flex-wrap: wrap;
   width: 60%;
@@ -176,17 +274,17 @@ h2 {
   align-items: center;
   flex-direction: row;
   justify-content: left;
-  margin: 5%;
-  padding: 3%;
-  background: #23515b;
-  color: white;
+  margin: 3%;
+  padding: 2%;
+  background: #FFFFFF;
+  color: #303631;
   border-radius: 15px;
   overflow: hidden;
 }
 
 .displayedPlant h2 {
   font-size: 2rem;
-  margin: 4%;
+  margin: 2%;
 }
 
 .displayedPlant h3 {
@@ -196,5 +294,57 @@ h2 {
 }
 
 .displayedPlant span {
-  color: #8de450;
+  color: #2D6476;
+}
+
+#userForm {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+
+#userForm input {
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 3%;
+  background: #F2F3F2;
+}
+
+#userForm button {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  background: #2D6476;
+  border: none;
+  border-radius: 10px;
+  margin: 2% 0;
+}
+
+#deleteButton {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  background: #d82f2f;
+  border: none;
+  border-radius: 10px;
+  margin: 2% 0;
+  padding: 0 5%;
+}
+
+.welcomeWords {
+  text-align: left;
+  margin-left: 5%;
+  color: #2D6476;
+}
+
+.welcomeWords h2 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+.welcomeWords h3 {
+  font-size: 3rem;
+  margin: 0;
+  margin-bottom: 2%;
 }
