@@ -82,15 +82,8 @@ h2 {
 .dashboardComponents {
   display: flex;
   flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
 }
 
-.plantList {
-  width: 30%;
-  padding: 5%;
-  background: #C4C4C4; 
-}
 
 .newPlant {
   background: #F2F3F2;
@@ -120,6 +113,10 @@ h2 {
 
 .plantList {
   background: none;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 30%;
+  padding: 5%;
 }
 
 .displayedPlant {
