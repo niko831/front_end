@@ -12,8 +12,8 @@ const Dashboard = (props) => {
     //CONTEXT
     const {user_id, welcome, plantList, setPlantList} = useContext(UserContext);
 
-
     useEffect( () => {
+
         const fetchPlants = () => {
             axiosWithAuth().get(`/api/users/${user_id}/plants`)
                            .then( res => {
@@ -26,6 +26,7 @@ const Dashboard = (props) => {
         }
         fetchPlants()
     }, [setPlantList])
+
 
     const handleLogout = e => {
         e.preventDefault();

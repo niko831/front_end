@@ -295,6 +295,7 @@ h2 {
 
 .displayedPlant span {
   color: #2D6476;
+  display: inline-block;
 }
 
 #userForm {
