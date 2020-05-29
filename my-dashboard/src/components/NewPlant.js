@@ -24,7 +24,8 @@ const NewPlant = (props) => {
             h2o_frequency: plant.h2o_frequency
         })
         .then( res => {
-            console.log('New Plant POST Success', res)            
+            console.log('New Plant POST Success', res)
+                       
         })
         .catch (err => console.log('Error POST for add new plant', err))
     }
